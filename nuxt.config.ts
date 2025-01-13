@@ -3,25 +3,29 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
+
   postcss: {
     plugins: {
       tailwindcss: {},
       autoprefixer: {},
     },
   },
+
   app: {
     head: {
-      title: 'Nuxt Tailwind | Starter',
+      title: 'KinWebb | My Portfolio',
       meta: [
         {
-          name: 'description', content: 'Nuxt Tailwind - Starter Pack.'
+          name: 'description', content: 'This is the official portfolio of Kent Joemar Escoto.'
         }
       ],
       link: [
         {
-          rel: 'shortcut icon', type: 'image/png', href: '/favicon.ico'
+          rel: 'shortcut icon', type: 'image/png', href: '/IconLogo.png'
         }
       ]
     }
   },
+
+  modules: ['@nuxt/ui'],
 })

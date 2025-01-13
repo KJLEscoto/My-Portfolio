@@ -4,7 +4,15 @@
 
 @layer base {
   html, 
-  body {
-    @apply h-screen bg-blue-800
+  body { 
+    @apply h-auto w-auto dark:bg-black bg-white dark:text-white text-black scroll-smooth overflow-x-hidden selection:bg-darkest-blue trans
+  }
+
+  ::-webkit-scrollbar {
+    @apply w-0 bg-none
+  }
+
+  .trans {
+    @apply transition-all ease-in duration-150
   }
 }

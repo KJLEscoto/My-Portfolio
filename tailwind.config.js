@@ -9,8 +9,18 @@ export default {
     "./error.vue",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'black': '#0D0D0D',
+        'white': '#FFFFFF',
+        'gray-500': '#A0A0A0',
+        'dark-blue': '#6182AE',
+        'red-500': '#FF2D20',
+        'darkest-blue': '#465f80'
+      }
+    },
   },
+  darkMode: 'class',
   plugins: [],
 }
 
