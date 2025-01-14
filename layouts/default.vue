@@ -1,6 +1,6 @@
 <template>
-  <div class="h-full w-full overflow-auto">
-    <main class="h-full w-full xl:px-60 px-5 flex flex-col gap-y-10">
+  <div class="h-full w-full">
+    <main class="h-full w-full xl:px-60 px-5 flex flex-col gap-y-10 pb-40">
       <slot />
       <PageContact id="contact" class="pt-40" />
     </main>

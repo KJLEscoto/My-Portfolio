@@ -27,25 +27,36 @@
         </p>
 
         <!-- Content -->
-        <div class="w-full">
-          <div v-if="status === 'pending'" class="text-gray-500 text-center">
-            Loading...
-          </div>
-          <div v-else-if="status === 'error'" class="text-red-500 text-center">
-            Error loading projects. Please try again later.
-          </div>
-          <div v-else class="space-y-10">
-            <div v-for="project in filteredProjects" :key="project.id" class="flex gap-7">
-              <img class="w-[450px] h-[250px] rounded-xl" :src="project.image">
-              <section class="space-y-2 my-auto">
-                <p
-                  class="text-xs px-5 py-2 rounded bg-gray-500/10 text-dark-blue w-fit font-semibold tracking-wider cursor-default">
-                  {{ project.category }}</p>
-                <h3 class="text-2xl font-semibold">{{ project.name }}</h3>
-                <p class="text-gray-500">{{ project.description }}</p>
-              </section>
-            </div>
-          </div>
+        <div class="w-full h-auto trans">
+          <section v-if="status === 'pending'">
+            <PageStatus status="pending" />
+          </section>
+
+          <section v-else-if="status === 'error'">
+            <PageStatus status="error" />
+          </section>
+
+          <section v-else class="space-y-10">
+            <Card :cards="visibleProjects" />
+
+            <span>
+              <div class="space-y-2 mt-10">
+                <Divider />
+                <p class="text-xs text-gray-500/50 tracking-wider font-medium text-center">Showing {{ visibleProjects.length }} of
+                  {{
+                  filteredProjects.length }} Projects</p>
+                <Divider />
+              </div>
+            </span>
+
+            <span v-if="displayButtons">
+              <div class="w-full flex justify-center items-center mt-5">
+                <Button v-if="canLoadMore" @click="loadMore" label="See More" btype="secondary"
+                  right-icon="i-pajamas-expand-down" />
+                <Button v-else @click="seeLess" label="See Less" btype="secondary" right-icon="i-pajamas-expand-up" />
+              </div>
+            </span>
+          </section>
         </div>
       </div>
     </section>
@@ -53,7 +64,6 @@
 </template>
 
 <script setup>
-
 const tabs = [
   {
     title: 'All',
@@ -70,6 +80,8 @@ const tabs = [
 ];
 
 const activeTab = ref(tabs[ 0 ].title);
+const projectsPerPage = 3; // Number of projects to display initially and per load
+const currentPage = ref(1);
 
 // Fetch projects from API
 const { data, status } = await useLazyFetch('/api/projects');
@@ -88,8 +100,35 @@ const currentTabDescription = computed(() => {
   return active ? active.description : '';
 });
 
+// Visible projects based on pagination
+const visibleProjects = computed(() => {
+  return filteredProjects.value.slice(0, currentPage.value * projectsPerPage);
+});
+
+// Determine if more projects can be loaded
+const canLoadMore = computed(() => {
+  return visibleProjects.value.length < filteredProjects.value.length;
+});
+
 // Handle tab selection
 const selectTab = (tab) => {
   activeTab.value = tab;
+  currentPage.value = 1; // Reset pagination when tab changes
 };
+
+// Load more projects
+const loadMore = () => {
+  currentPage.value += 1;
+};
+
+// See less projects
+const seeLess = () => {
+  currentPage.value = 1;
+};
+
+// Determine if buttons should be displayed
+const displayButtons = computed(() => {
+  return filteredProjects.value.length > projectsPerPage;
+});
+
 </script>

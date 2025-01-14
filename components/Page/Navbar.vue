@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-center justify-between py-10">
+  <div class="flex items-center justify-between py-10 w-fit">
     <NuxtLink to="/">
       <Logo />
     </NuxtLink>

@@ -1,6 +1,6 @@
 <template>
   <ul v-for="item in items">
-    <li class="text-gray-500 hover:text-dark-blue trans">
+    <li class="text-gray-500 hover:text-dark-blue trans select-none">
       <NuxtLink :to="item.path">
         {{ item.name }}
       </NuxtLink>

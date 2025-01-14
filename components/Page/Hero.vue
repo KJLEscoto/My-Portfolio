@@ -11,12 +11,11 @@
         <div class="flex items-center gap-5 mt-10">
           <Button label="My Projects" btype="primary" />
           <Button label="Resume" right-icon="i-mdi-file-document-arrow-right-outline" btype="secondary" />
-          <!-- <Button label="Live Demo" left-icon="i-material-symbols-light-circle" btype="tertiary" /> -->
         </div>
       </span>
     </section>
     <section class="w-full flex items-center justify-center">
-      <img class="w-auto h-[350px] rounded-3xl" src="/MainModel.png">
+      <img draggable="false" class="w-auto h-[350px] rounded-3xl" src="/MainModel.png">
     </section>
   </div>
 </template>
