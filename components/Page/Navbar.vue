@@ -1,7 +1,7 @@
 <template>
-  <div class="flex items-center justify-between py-10 w-fit">
+  <div class="flex items-center justify-between py-10 w-full">
     <NuxtLink to="/">
-      <Logo />
+      <Logo logo-type="mainLogo" />
     </NuxtLink>
 
     <div class="flex gap-10 items-center">

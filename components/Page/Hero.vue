@@ -15,7 +15,11 @@
       </span>
     </section>
     <section class="w-full flex items-center justify-center">
-      <img draggable="false" class="w-auto h-[350px] rounded-3xl" src="/MainModel.png">
+      <UTooltip text="Let's Work!" :ui="{ background: 'bg-white dark:bg-black', ring: 'ring-1 ring-gray-200 dark:ring-gray-500/30' }">
+        <img draggable="false"
+          class="w-auto h-[350px] rounded-3xl hover:scale-110 hover:rotate-3 trans"
+          src="/MainModel.png">
+      </UTooltip>
     </section>
   </div>
 </template>

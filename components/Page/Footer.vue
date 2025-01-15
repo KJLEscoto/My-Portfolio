@@ -3,7 +3,7 @@
     <p class="text-gray-500 text-sm font-medium cursor-default">Copyright &copy; Kent Joemar Escoto.</p>
     <UTooltip text="Back to Top" :ui="{ background: 'bg-white dark:bg-black', ring: 'ring-1 ring-gray-200 dark:ring-gray-500/30' }">
       <span @click="scrollToTop" class="cursor-pointer">
-        <Logo />
+        <Logo logo-type="mainLogo" />
       </span>
     </UTooltip>
   </div>
