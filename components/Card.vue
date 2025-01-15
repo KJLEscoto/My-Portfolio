@@ -3,7 +3,7 @@
     <img draggable="false" class="w-[450px] h-[250px] rounded-xl" :src="card.image">
     <section class="space-y-2 my-auto">
       <span class="flex gap-2 items-center">
-        <div v-for="tag in card.category">
+        <div v-for="tag in card.category" :key="tag">
           <Tag :name="tag" />
         </div>
       </span>
@@ -11,9 +11,14 @@
       <p class="text-gray-500">{{ card.description }}</p>
       <span>
         <div class="flex gap-3 items-center mt-7">
-          <Button v-if="card.category === 'Code'" label="Github" left-icon="i-mdi-github" btype="primary"
+          <!-- Conditional Rendering for Buttons -->
+          <Button v-if="card.category.includes('Design') && card.category.includes('Code')" btype="dual"
+            left-icon="i-logos-figma" right-icon="i-mdi-github" @design="console.log('figma')"
+            @code="console.log('github')" />
+          <Button v-else-if="card.category.includes('Code')" label="GitHub" left-icon="i-mdi-github" btype="primary"
             btn-class="dark:hover:text-dark-blue" />
-          <Button v-if="card.category === 'Design'" label="Figma" left-icon="i-logos-figma" btype="primary" />
+          <Button v-else-if="card.category.includes('Design')" label="Figma" left-icon="i-logos-figma"
+            btype="primary" />
           <Button label="See Details" btype="secondary" right-icon="i-pajamas-arrow-right" />
           <Button v-if="card.live" label="Live Demo" left-icon="i-material-symbols-light-circle" btype="tertiary" />
         </div>
@@ -25,5 +30,5 @@
 <script setup>
 defineProps({
   cards: Array,
-})
+});
 </script>

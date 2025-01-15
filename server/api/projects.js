@@ -37,7 +37,7 @@ export default defineEventHandler(() => {
     //   id: 5,
     //   name: "Personal Portfolio 1",
     //   description: "A modern and responsive personal portfolio website showcasing projects and skills.",
-    //   category: "Design",
+    //   category: ["Design", "Code"],
     //   image: "https://picsum.photos/1920/1080?random=4",
     //   live: true
     // },

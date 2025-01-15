@@ -1,25 +1,39 @@
 <template>
-  <button v-if="btype === 'primary'" @click="$emit('click')"
+  <button v-if="btype === 'primary'" @click="$emit('click')" :disabled="isDisabled"
     class="dark:bg-white dark:text-black px-10 py-2 rounded-full font-semibold cursor-pointer trans dark:hover:bg-darkest-blue dark:hover:text-white flex items-center gap-2 select-none">
     <UIcon :name="leftIcon" v-if="leftIcon" class="h-5 w-5" />
     <p>{{ label }}</p>
     <UIcon :name="rightIcon" v-if="rightIcon" class="h-5 w-5" />
   </button>
 
-  <button v-if="btype === 'secondary'" @click="$emit('click')"
+  <button v-if="btype === 'secondary'" @click="$emit('click')" :disabled="isDisabled"
     class="dark:bg-none dark:text-gray-500 px-10 py-2 border border-gray-500/30 rounded-full font-semibold cursor-pointer trans dark:hover:border-white dark:hover:text-white flex items-center gap-2 select-none">
     <UIcon :name="leftIcon" v-if="leftIcon" class="h-5 w-5" />
     <p>{{ label }}</p>
     <UIcon :name="rightIcon" v-if="rightIcon" class="h-5 w-5" />
   </button>
 
-  <button v-if="btype === 'tertiary'" @click="$emit('click')"
-    class="dark:bg-none dark:text-red-500 py-2 font-semibold cursor-pointer trans dark:hover:text-red-500/50 flex items-center gap-1 select-none" 
-    :class="`${btnClass}`">
+  <button v-if="btype === 'tertiary'" @click="$emit('click')" :disabled="isDisabled"
+    class="dark:bg-none dark:text-red-500 py-2 font-semibold cursor-pointer trans dark:hover:text-red-500/50 flex items-center gap-1 select-none">
     <UIcon :name="leftIcon" v-if="leftIcon" class="h-3 w-3" />
     <p>{{ label }}</p>
     <UIcon :name="rightIcon" v-if="rightIcon" class="h-3 w-3" />
   </button>
+
+  <section v-if="btype === 'dual'" class="flex items-center gap-1">
+    <UTooltip text="Figma"
+      :ui="{ background: 'bg-white dark:bg-black', ring: 'ring-1 ring-gray-200 dark:ring-gray-500/30' }">
+      <button :class="`${dualClass} rounded-l-full`" @click="$emit('design')" :disabled="isDisabled">
+        <UIcon :name="leftIcon" v-if="leftIcon" class="h-5 w-5" />
+      </button>
+    </UTooltip>
+    <UTooltip text="Github"
+      :ui="{ background: 'bg-white dark:bg-black', ring: 'ring-1 ring-gray-200 dark:ring-gray-500/30' }">
+      <button :class="`${dualClass} rounded-r-full`" @click="$emit('code')" :disabled="isDisabled">
+        <UIcon :name="rightIcon" v-if="rightIcon" class="h-5 w-5" />
+      </button>
+    </UTooltip>
+  </section>
 </template>
 
 <script setup>
@@ -28,8 +42,10 @@ defineProps({
   rightIcon: String,
   leftIcon: String,
   btype: String,
-  btnClass: String
+  isDisabled: Boolean
 })
 
-defineEmits([ 'click' ]);
+const dualClass = 'dark:bg-white dark:text-black px-7 py-2 font-semibold cursor-pointer trans dark:hover:bg-darkest-blue dark:hover:text-white flex items-center gap-2 select-none'
+
+defineEmits([ 'click', 'design', 'code' ]);
 </script>

@@ -9,7 +9,7 @@
 
       <span>
         <div class="flex items-center gap-5 mt-10">
-          <Button label="My Projects" btype="primary" />
+          <Button label="My Projects" btype="primary" @click="navigateTo('/#projects')" />
           <Button label="Resume" right-icon="i-mdi-file-document-arrow-right-outline" btype="secondary" />
         </div>
       </span>

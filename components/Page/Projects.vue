@@ -91,8 +91,9 @@ const filteredProjects = computed(() => {
   if (!data.value) return [];
   return activeTab.value === tabs[ 0 ].title
     ? data.value
-    : data.value.filter((project) => project.category === activeTab.value);
+    : data.value.filter((project) => project.category.includes(activeTab.value));
 });
+
 
 // Current tab description
 const currentTabDescription = computed(() => {
