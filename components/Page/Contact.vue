@@ -175,7 +175,7 @@ const copy = () => {
 const submitForm = async () => {
   try {
     load.bool = true
-    load.label = ''
+    load.label = 'Sending...'
     load.icon = 'i-line-md-loading-loop'
     load.isDisable = true
     
@@ -198,6 +198,10 @@ const submitForm = async () => {
       formData.name = '';
       formData.email_address = '';
       formData.message = '';
+
+      load.bool = false
+      load.label = 'Send Message'
+      load.icon = 'i-ic-sharp-send'
 
       toast.add({
         title: "Message Sent!",
@@ -229,9 +233,8 @@ const submitForm = async () => {
     load.icon = 'i-line-md-loading-loop'
     load.isDisable = true
 
-    console.error("Failed to send message:", error.message);
     toast.add({
-      title: "Error! Please try again.",
+      title: "Please complete the form before submitting.",
       icon: "i-mdi-alert-circle",
       timeout: timeoutDuration,
       callback: () => {

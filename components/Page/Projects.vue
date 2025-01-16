@@ -33,7 +33,7 @@
           </section>
 
           <section v-else-if="status === 'error'">
-            <PageStatus status="error" />
+            <PageStatus status="error" message="Failed to load projects." />
           </section>
 
           <section v-else class="space-y-10">
@@ -42,7 +42,7 @@
             <span>
               <div class="space-y-2 mt-10">
                 <Divider />
-                <p class="text-xs text-gray-500/50 tracking-wider font-medium text-center">Showing {{ visibleProjects.length }} of
+                <p class="text-xs text-gray-500/70 tracking-wider font-medium text-center">Showing {{ visibleProjects.length }} of
                   {{
                   filteredProjects.length }} Projects</p>
                 <Divider />

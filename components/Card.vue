@@ -1,6 +1,6 @@
 <template>
-  <div v-for="card in cards" :key="card.id" class="flex gap-7">
-    <span>
+  <div  v-for="card in cards" :key="card.id" class="flex gap-7">
+    <span v-if="card.image">
       <div class="w-[450px] h-[250px] rounded-xl overflow-hidden group">
         <img draggable="false" class="w-full h-full rounded-xl trans group-hover:scale-105" :src="card.image" />
       </div>
