@@ -105,10 +105,10 @@ const socials = [
     icon: 'i-hugeicons-instagram',
     link: 'https://www.instagram.com/_itskjle/',
   },
-  {
-    icon: 'i-proicons-x-twitter',
-    link: 'https://x.com/_foetaka',
-  },
+  // {
+  //   icon: 'i-proicons-x-twitter',
+  //   link: 'https://x.com/_foetaka',
+  // },
   {
     icon: 'i-bxl-linkedin',
     link: 'https://www.linkedin.com/in/kent-joemar-escoto-646b92265/',

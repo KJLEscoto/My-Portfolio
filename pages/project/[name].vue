@@ -39,7 +39,11 @@
 
         <div class="space-y-2">
           <p class="text-dark-blue text-sm tracking-wide font-medium">Role</p>
-          <h1 class="text-lg">{{ project.role }}</h1>
+          <div>
+            <ul v-for="role in project.role">
+              <li class="text-lg list-disc list-inside">{{ role }}</li>
+            </ul>
+          </div>
         </div>
 
         <div class="space-y-2" v-if="project.frameworks.length">
@@ -62,6 +66,28 @@
               <p class="text-sm text-white/80 font-semibold">{{ tool.name }}</p>
             </span>
           </div>
+        </div>
+      </section>
+
+      <Divider />
+
+      <section class="space-y-3">
+        <div class="text-lg font-medium flex gap-2 items-center select-none">
+          Visit
+        </div>
+        <div>
+          <span>
+            <div class="flex gap-5 items-center">
+              <Button v-if="project.category.includes('Code')" @click="link(getProjectLink(project, 'Github'))"
+                label="GitHub" left-icon="i-mdi-github" btype="primary" btn-class="dark:hover:text-dark-blue" />
+
+              <Button v-if="project.category.includes('Design')" @click="link(getProjectLink(project, 'Figma'))"
+                label="Figma" left-icon="i-logos-figma" btype="primary" />
+
+              <Button v-if="project.live" label="Live Demo" left-icon="i-material-symbols-light-circle" btype="tertiary"
+                @click="link(getProjectLink(project, 'Live'))" />
+            </div>
+          </span>
         </div>
       </section>
 
@@ -95,7 +121,8 @@
             </div>
           </div>
           <div v-if="project.screenshots.length">
-            <img draggable="false" class="w-full h-auto rounded-xl border border-gray-500/20" :src="currentScreenshot.path">
+            <img draggable="false" class="w-full h-auto rounded-xl border border-gray-500/20"
+              :src="currentScreenshot.path">
             <span>
               <div class="space-y-2 mt-5">
                 <Divider />
@@ -122,8 +149,7 @@
           Figma Overview
         </div>
         <iframe class="w-full border border-gray-500/30 rounded-xl" width="800" height="500"
-          :src="project.figmaOverview"
-          allowfullscreen></iframe>
+          :src="project.figmaOverview" allowfullscreen></iframe>
       </section>
 
 
@@ -140,6 +166,16 @@ const loading = ref(true);
 const currentIndex = ref(0); // To track the current screenshot index
 
 const route = useRoute();
+
+// Function to get the project link by label from the card
+const getProjectLink = (project, label) => {
+  return project.projectUrl.find((url) => url.label === label)?.link || '#';
+};
+
+// Function to open links
+const link = (url) => {
+  if (url !== '#') window.open(url, '_blank');
+};
 
 // Fetch project data
 const fetchProject = async () => {
