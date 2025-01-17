@@ -15,6 +15,11 @@
       </div>
     </div>
 
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d1683.259380902936!2d125.60348049797669!3d7.08949999876462!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zN8KwMDUnMjIuMiJOIDEyNcKwMzYnMTYuNCJF!5e1!3m2!1sen!2sph!4v1737081739597!5m2!1sen!2sph"
+      width="600" class="w-full rounded-xl" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
+
     <Divider />
 
     <div class="grid md:grid-cols-2 grid-cols-1 gap-20">
@@ -79,8 +84,7 @@
           <div class="w-full flex justify-end">
             <Button v-if="!load.bool" :isDisabled="load.isDisable" type="submit" :label="load.label" btype="primary"
               :right-icon="load.icon" />
-            <Button v-else :isDisabled="load.isDisable" :label="load.label" btype="primary"
-              :right-icon="load.icon" />
+            <Button v-else :isDisabled="load.isDisable" :label="load.label" btype="primary" :right-icon="load.icon" />
           </div>
         </form>
       </section>

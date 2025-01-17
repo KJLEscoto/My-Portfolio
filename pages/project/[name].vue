@@ -74,25 +74,25 @@
               <UIcon name="i-mdi-monitor-screenshot" />
               Screenshots
             </div>
-            <p class="text-sm flex items-center gap-2">
+            <div class="text-sm flex items-center gap-2">
               <button @click="prevScreenshot" :disabled="currentIndex === 0"
                 class="disabled:opacity-50 flex items-center hover:text-dark-blue disabled:hover:text-current disabled:cursor-not-allowed select-none">
                 <UIcon name="i-tabler-caret-left-filled" /> Prev
               </button>
-            <section>
-              <!-- make this span an input which the user can choose what image index he will go, for example '5' -->
-              <span class="font-medium mr-1">
-                <input type="text" v-model="inputIndex" @change="updateScreenshotIndex" :min="1"
-                  :max="project.screenshots.length" class="text-center w-10 p-1 border rounded-md" />
-              </span> of
-              <span class="font-medium">{{ project.screenshots.length }}</span>
-            </section>
-            <button @click="nextScreenshot" :disabled="currentIndex === project.screenshots.length - 1"
-              class="disabled:opacity-50 flex items-center hover:text-dark-blue disabled:hover:text-current disabled:cursor-not-allowed select-none">
-              Next
-              <UIcon name="i-tabler-caret-right-filled" />
-            </button>
-            </p>
+              <div>
+                <!-- make this span an input which the user can choose what image index he will go, for example '5' -->
+                <span class="font-medium mr-1">
+                  <input type="text" v-model="inputIndex" @change="updateScreenshotIndex" :min="1"
+                    :max="project.screenshots.length" class="text-center w-10 p-1 border rounded-md" />
+                </span> of
+                <span class="font-medium">{{ project.screenshots.length }}</span>
+              </div>
+              <button @click="nextScreenshot" :disabled="currentIndex === project.screenshots.length - 1"
+                class="disabled:opacity-50 flex items-center hover:text-dark-blue disabled:hover:text-current disabled:cursor-not-allowed select-none">
+                Next
+                <UIcon name="i-tabler-caret-right-filled" />
+              </button>
+            </div>
           </div>
           <div v-if="project.screenshots.length">
             <img draggable="false" class="w-full h-auto rounded-xl" :src="currentScreenshot.path">
@@ -108,12 +108,22 @@
         </span>
 
         <span v-else>
-          <div class="text-darkest-blue flex items-center justify-center gap-2 text-lg font-semibold select-none">
+          <div class="text-gray-500 flex items-center justify-center gap-2 text-lg font-semibold select-none">
             <UIcon name="i-mdi-monitor-off" />
-            No Screenshots Available.
+            No Screenshots Available
           </div>
         </span>
 
+      </section>
+
+      <section v-if="project.figmaOverview" class="space-y-3">
+        <div class="text-lg font-medium flex gap-2 items-center select-none">
+          <UIcon name="i-material-symbols-overview-key-outline" />
+          Figma Overview
+        </div>
+        <iframe class="w-full border border-gray-500/30 rounded-xl" width="800" height="500"
+          :src="project.figmaOverview"
+          allowfullscreen></iframe>
       </section>
 
 
