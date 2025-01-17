@@ -46,6 +46,10 @@ const midpoint = Math.ceil(skills.value.length / 2);
 const topSkills = ref(skills.value.slice(0, midpoint));
 const bottomSkills = ref(skills.value.slice(midpoint));
 
+console.log(topSkills);
+console.log(bottomSkills);
+
+
 // Double each array for seamless looping
 const doubledTopSkills = ref([ ...topSkills.value, ...topSkills.value ]);
 const doubledBottomSkills = ref([ ...bottomSkills.value, ...bottomSkills.value ]);

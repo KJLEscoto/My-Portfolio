@@ -1,7 +1,7 @@
 <template>
   <div  v-for="card in cards" :key="card.id" class="flex gap-7">
     <span v-if="card.image">
-      <div class="w-[450px] h-[250px] rounded-xl overflow-hidden group">
+      <div class="w-[450px] h-[250px] rounded-xl overflow-hidden group border border-gray-500/20">
         <img draggable="false" class="w-full h-full rounded-xl trans group-hover:scale-105" :src="card.image" />
       </div>
     </span>
@@ -30,7 +30,7 @@
           <Button label="See Details" btype="secondary" right-icon="i-pajamas-arrow-right"
             @click="navigateTo(`/project/${formatName(card.name)}`)" />
 
-          <Button v-if="card.live" label="Live Demo" left-icon="i-material-symbols-light-circle" btype="tertiary" />
+          <Button v-if="card.live" label="Live Demo" left-icon="i-material-symbols-light-circle" btype="tertiary" @click="link(card.liveUrl)" />
         </div>
       </span>
     </section>

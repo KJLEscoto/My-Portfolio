@@ -95,7 +95,7 @@
             </div>
           </div>
           <div v-if="project.screenshots.length">
-            <img draggable="false" class="w-full h-auto rounded-xl" :src="currentScreenshot.path">
+            <img draggable="false" class="w-full h-auto rounded-xl border border-gray-500/20" :src="currentScreenshot.path">
             <span>
               <div class="space-y-2 mt-5">
                 <Divider />

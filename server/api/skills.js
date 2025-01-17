@@ -26,6 +26,8 @@ export default function skills() {
     { id: 24, name: 'MySQL', icon: 'i-devicon-mysql', category: 'Other Tools' },
     { id: 25, name: 'XAMPP', icon: 'i-logos-xampp', category: 'Other Tools' },
     { id: 26, name: 'Postman', icon: 'i-devicon-postman', category: 'Other Tools' },
+    { id: 27, name: 'Netlify', icon: 'i-vscode-icons-file-type-light-netlify', category: 'Other Tools' },
+    { id: 28, name: 'Iconify', icon: 'i-simple-icons-iconify', category: 'Other Tools' },
   ];
 
   return skills;

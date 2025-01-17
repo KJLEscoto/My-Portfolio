@@ -13,10 +13,10 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: 'KinWebb | My Portfolio',
+      title: 'KinWebb | Personal Portfolio',
       meta: [
         {
-          name: 'description', content: 'This is the official portfolio of Kent Joemar Escoto.'
+          name: 'description', content: 'This is the official personal portfolio of Kent Joemar Escoto.'
         }
       ],
       link: [
