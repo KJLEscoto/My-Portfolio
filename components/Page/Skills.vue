@@ -30,7 +30,7 @@
 
 <script setup>
 
-const iconClass = 'text-5xl mx-2 hover:scale-150 trans opacity-50 hover:opacity-100 filter hover:drop-shadow-[0_0_14px_blue]'
+const iconClass = 'text-5xl mx-2 hover:scale-150 trans dark:opacity-50 opacity-70 hover:opacity-100 filter hover:drop-shadow-[0_0_14px_blue]'
 
 const { data: skillsData, pending, error } = await useLazyFetch('/api/skills');
 

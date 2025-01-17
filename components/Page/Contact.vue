@@ -32,14 +32,14 @@
         <div class="space-y-3">
           <p>Contact me via Email</p>
           <div
-            class="rounded flex items-center justify-between px-5 py-3 text-gray-500 border border-gray-500/30 text-sm bg-gray-500/10">
+            class="rounded flex items-center justify-between px-5 py-3 dark:text-gray-500 text-black border border-gray-500/30 text-sm bg-gray-500/10">
             <section class="flex items-center gap-2">
               <UIcon class="h-6 w-6" name="i-ic-round-email" />
               <p class="tracking-wider" id="personal_email">kin.webb.1024@gmail.com</p>
             </section>
 
             <button :class="{ 'opacity-60 cursor-not-allowed': isDisabled }" @click="copy" :disabled="isDisabled"
-              class="flex items-center gap-1 text-xs py-2 px-3 bg-gray-500/10 rounded hover:opacity-60 select-none">
+              class="flex items-center gap-1 text-xs py-2 px-3 dark:bg-gray-500/10 bg-gray-500/30 rounded hover:opacity-60 select-none">
               <p>Copy</p>
               <UIcon name="i-lucide-copy" />
             </button>
@@ -50,8 +50,8 @@
           <p>Follow me on social media</p>
           <section class="flex items-center gap-3">
             <NuxtLink target="_blank" :to="social.link" v-for="social in socials" :key="social.link"
-              class="border border-gray-500/30 rounded-full flex items-center p-2 hover:border-white justify-center">
-              <UIcon class="w-5 h-5 text-white" :name="social.icon" />
+              class="border border-gray-500/30 rounded-full flex items-center p-2 hover:border-black dark:hover:border-white justify-center">
+              <UIcon class="w-5 h-5 dark:text-white text-black" :name="social.icon" />
             </NuxtLink>
           </section>
         </div>
@@ -218,15 +218,15 @@ const submitForm = async () => {
           load.isDisable = false
         },
         ui: {
-          background: "dark:bg-gray-900 bg-white",
+          background: "dark:bg-gray-900 bg-gray-200",
           progress: {
-            background: "dark:bg-green-500 bg-gray-900 rounded-full",
+            background: "dark:bg-green-500 bg-green-500 rounded-full",
           },
           ring: "ring-0",
-          title: "text-sm font-medium text-gray-900 dark:text-green-500",
+          title: "text-sm font-medium text-green-500 dark:text-green-500",
           icon: {
             base: "flex-shrink-0 w-5 h-5",
-            color: "text-gray-900 dark:text-green-500",
+            color: "text-green-500 dark:text-green-500",
           },
         },
       });
@@ -250,13 +250,13 @@ const submitForm = async () => {
       ui: {
         background: "dark:bg-gray-900 bg-white",
         progress: {
-          background: "dark:bg-red-600 bg-gray-900 rounded-full",
+          background: "dark:bg-red-600 bg-red-500 rounded-full",
         },
         ring: "ring-0",
-        title: "text-sm font-medium text-gray-900 dark:text-red-600",
+        title: "text-sm font-medium text-red-500 dark:text-red-600",
         icon: {
           base: "flex-shrink-0 w-5 h-5",
-          color: "text-gray-900 dark:text-red-600",
+          color: "text-red-500 dark:text-red-600",
         },
       },
     });

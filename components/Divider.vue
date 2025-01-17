@@ -1,5 +1,5 @@
 <template>
   <div>
-    <hr class="border-gray-500/10 w-full">
+    <hr class="dark:border-gray-500/10 border-gray-500/30 w-full">
   </div>
 </template>

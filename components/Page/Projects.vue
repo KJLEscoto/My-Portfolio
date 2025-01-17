@@ -15,14 +15,14 @@
         <!-- Tabs -->
         <ul class="flex">
           <li v-for="(tab, index) in tabs" :key="index"
-            :class="['cursor-pointer px-6 py-2 hover:text-white', tab.title === activeTab ? 'border-b-2 border-white text-white' : 'text-gray-500']"
+            :class="['cursor-pointer px-6 py-2 dark:hover:text-white hover:text-black', tab.title === activeTab ? 'border-b-2 dark:border-white border-black dark:text-white text-black' : 'text-gray-500']"
             @click="selectTab(tab.title)">
             {{ tab.title }}
           </li>
         </ul>
 
         <!-- Tab Description -->
-        <p class="text-white w-full">
+        <p class="dark:text-white text-black w-full">
           {{ currentTabDescription }}
         </p>
 
@@ -42,7 +42,7 @@
             <span>
               <div class="space-y-2 mt-10">
                 <Divider />
-                <p class="text-xs text-gray-500/70 tracking-wider font-medium text-center">Showing {{ visibleProjects.length }} of
+                <p class="text-xs text-gray-500 dark:text-gray-500/70 tracking-wider font-medium text-center">Showing {{ visibleProjects.length }} of
                   {{
                   filteredProjects.length }} Projects</p>
                 <Divider />

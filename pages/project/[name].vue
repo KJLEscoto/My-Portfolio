@@ -52,7 +52,7 @@
             <span class="flex gap-2 items-center px-4 py-2 bg-gray-500/10 rounded select-none"
               v-for="framework in project.frameworks">
               <UIcon :name="framework.icon" />
-              <p class="text-sm text-white/80 font-semibold">{{ framework.name }}</p>
+              <p class="text-sm text-black/80 dark:text-white/80 font-semibold">{{ framework.name }}</p>
             </span>
           </div>
         </div>
@@ -63,7 +63,7 @@
             <span class="flex gap-2 items-center px-4 py-2 bg-gray-500/10 rounded select-none"
               v-for="tool in project.tools">
               <UIcon :name="tool.icon" />
-              <p class="text-sm text-white/80 font-semibold">{{ tool.name }}</p>
+              <p class="text-sm text-black/80 dark:text-white/80 font-semibold">{{ tool.name }}</p>
             </span>
           </div>
         </div>
@@ -126,7 +126,7 @@
             <span>
               <div class="space-y-2 mt-5">
                 <Divider />
-                <p class="text-xs text-gray-500/70 tracking-wider font-medium text-center">{{
+                <p class="text-xs dark:text-gray-500/70 text-gray-500 tracking-wider font-medium text-center">{{
                   getFileName(currentScreenshot.path) }}</p>
                 <Divider />
               </div>

@@ -1,7 +1,7 @@
 <template>
   <ul v-for="item in items" :key="item.name">
-    <li class="text-gray-500 hover:text-dark-blue trans select-none" :class="{
-      'font-bold text-white': isActive(item)
+    <li class="dark:text-gray-500 text-black hover:text-dark-blue trans select-none" :class="{
+      'font-bold dark:text-white text-black': isActive(item)
     }">
       <a :href="item.path" @click.prevent="handleClick(item)">
         {{ item.name }}
