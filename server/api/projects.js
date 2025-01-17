@@ -138,7 +138,8 @@ export default defineEventHandler(async (event) => {
       live: true,
       projectUrl: [
         { label: 'Figma', link: 'https://www.figma.com/design/JXaPNyF8eqgIptKlyGv4io/My-Portfolio?node-id=0-1&t=WyAqHGrS7Hw5mECM-1' },
-        { label: 'Github', link: 'https://github.com/KJLEscoto/My-Portfolio' }
+        { label: 'Github', link: 'https://github.com/KJLEscoto/My-Portfolio' },
+        { label: 'Live', link: 'https://kinwebb.netlify.app/' }
       ],
       role: ['Full-Stack Lite Developer', 'UI/UX Designer'],
       frameworks: ['Nuxt JS', 'Tailwind'], 

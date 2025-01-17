@@ -10,14 +10,15 @@
       <span>
         <div class="flex items-center gap-5 mt-10">
           <Button label="My Projects" btype="primary" @click="navigateTo('/#projects')" />
-          <Button label="Resume" right-icon="i-mdi-file-document-arrow-right-outline" btype="secondary" />
+          <Button label="Resume" right-icon="i-mdi-file-document-arrow-right-outline" btype="secondary" @click="link(resume)" />
+          <!-- https://drive.google.com/file/d/1UsVAtVGbFRgDPO6cB9Zpi7QHpJV4x_iX/view?usp=sharing -->
         </div>
       </span>
     </section>
     <section class="w-full flex items-center justify-center">
-      <UTooltip text="Let's Work!" :ui="{ background: 'bg-white dark:bg-black', ring: 'ring-1 ring-gray-200 dark:ring-gray-500/30' }">
-        <img draggable="false"
-          class="w-auto h-[350px] rounded-3xl hover:scale-110 hover:rotate-3 trans"
+      <UTooltip text="Let's Work!"
+        :ui="{ background: 'bg-white dark:bg-black', ring: 'ring-1 ring-gray-200 dark:ring-gray-500/30' }">
+        <img draggable="false" class="w-auto h-[350px] rounded-3xl hover:scale-110 hover:rotate-3 trans"
           src="/MainModel.png">
       </UTooltip>
     </section>
@@ -26,4 +27,9 @@
 
 <script setup>
 
+const resume = 'https://drive.google.com/file/d/1UsVAtVGbFRgDPO6cB9Zpi7QHpJV4x_iX/view?usp=sharing'
+
+const link = (url) => {
+  window.open(url, '_blank');
+};
 </script>
