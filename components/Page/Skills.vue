@@ -1,6 +1,6 @@
 <template>
   <div class="w-full h-auto space-y-10">
-    <section class="w-[75%]">
+    <section class="lg:w-[75%]">
       <PageDetails subheader="Skills" header="What I Bring to the Table.">
         Over the past few years, I have honed my expertise in front-end development, specializing in frameworks and
         libraries. Below are the tools and technologies I frequently work with:
@@ -9,7 +9,8 @@
 
     <section>
       <NuxtMarquee direction="left" speed="30">
-        <div v-for="skill in doubledTopSkills" :key="`top-${skill.id}`" class="h-40 flex items-center">
+        <div v-for="skill in doubledTopSkills" :key="`top-${skill.id}`"
+          class="lg:h-40 h-32 flex items-center">
           <UTooltip :text="skill.name" :popper="{ placement: 'top', offsetDistance: 16 }"
             :ui="{ background: 'bg-white dark:bg-black', ring: 'ring-1 ring-gray-200 dark:ring-gray-500/30' }">
             <UIcon :name="skill.icon" :class="`${iconClass}`" />
@@ -17,7 +18,7 @@
         </div>
       </NuxtMarquee>
       <NuxtMarquee direction="right" speed="30">
-        <div v-for="skill in doubledBottomSkills" :key="`bottom-${skill.id}`" class="h-40 flex items-center">
+        <div v-for="skill in doubledBottomSkills" :key="`bottom-${skill.id}`" class="lg:h-40 h-32 flex items-center">
           <UTooltip :text="skill.name" :popper="{ placement: 'bottom', offsetDistance: 16 }"
             :ui="{ background: 'bg-white dark:bg-black', ring: 'ring-1 ring-gray-200 dark:ring-gray-500/30' }">
             <UIcon :name="skill.icon" :class="`${iconClass}`" />

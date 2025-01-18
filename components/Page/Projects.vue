@@ -1,7 +1,7 @@
 <template>
   <div class="h-auto w-full">
     <!-- Page Details Section -->
-    <section class="w-[75%]">
+    <section class="lg:w-[75%]">
       <PageDetails subheader="Projects" header="Crafting Simplicity Through Design.">
         I focus on minimalist design principles, creating clean, functional, and user-friendly interfaces that
         prioritize
@@ -10,19 +10,19 @@
     </section>
 
     <!-- Projects Section -->
-    <section class="w-full mt-10">
+    <section class="w-full lg:mt-10 mt-7">
       <div class="flex flex-col items-start gap-5">
         <!-- Tabs -->
         <ul class="flex">
           <li v-for="(tab, index) in tabs" :key="index"
-            :class="['cursor-pointer px-6 py-2 dark:hover:text-white hover:text-black', tab.title === activeTab ? 'border-b-2 dark:border-white border-black dark:text-white text-black' : 'text-gray-500']"
+            :class="['cursor-pointer px-6 py-2 dark:hover:text-white hover:text-black lg:text-base text-sm', tab.title === activeTab ? 'border-b-2 dark:border-white border-black dark:text-white text-black' : 'text-gray-500']"
             @click="selectTab(tab.title)">
             {{ tab.title }}
           </li>
         </ul>
 
         <!-- Tab Description -->
-        <p class="dark:text-white text-black w-full">
+        <p class="dark:text-white text-black w-full lg:text-base text-sm">
           {{ currentTabDescription }}
         </p>
 
@@ -36,21 +36,19 @@
             <PageStatus status="error" message="Failed to load projects." />
           </section>
 
-          <section v-else class="space-y-10">
+          <section v-else class="lg:space-y-10 space-y-8">
             <Card :cards="visibleProjects" />
 
             <span>
-              <div class="space-y-2 mt-10">
-                <Divider />
-                <p class="text-xs text-gray-500 dark:text-gray-500/70 tracking-wider font-medium text-center">Showing {{ visibleProjects.length }} of
-                  {{
-                  filteredProjects.length }} Projects</p>
-                <Divider />
-              </div>
+              <p class="py-4 text-xs text-gray-500 dark:text-gray-500/70 tracking-wider font-medium text-center">Showing
+                {{ visibleProjects.length }} of
+                {{
+                filteredProjects.length }} Projects</p>
+              <Divider />
             </span>
 
-            <span v-if="displayButtons">
-              <div class="w-full flex justify-center items-center mt-5">
+            <span v-if="displayButtons" class="text-center flex justify-center items-center ">
+              <div class="w-fit">
                 <Button v-if="canLoadMore" @click="loadMore" label="See More" btype="secondary"
                   right-icon="i-pajamas-expand-down" />
                 <Button v-else @click="seeLess" label="See Less" btype="secondary" right-icon="i-pajamas-expand-up" />

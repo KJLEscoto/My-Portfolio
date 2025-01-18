@@ -1,6 +1,6 @@
 <template>
   <div
-    class="fixed top-12 z-50 w-fit flex items-center gap-x-14 rounded-full px-5 py-2 border border-black/50 bg-white/40 dark:border-gray-500/40 dark:bg-black/50 backdrop-blur">
+    class="fixed top-12 z-30 w-fit flex items-center gap-x-14 rounded-full px-5 py-2 border border-black/50 bg-white/40 dark:border-gray-500/40 dark:bg-black/50 backdrop-blur">
 
     <section class="flex items-center gap-5">
       <NuxtLink to="/">

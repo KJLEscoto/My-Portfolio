@@ -1,5 +1,5 @@
 <template>
-  <div class="h-full w-full my-auto flex xl:flex-row flex-col-reverse gap-10">
+  <div class="h-full w-full my-auto flex xl:flex-row flex-col-reverse lg:gap-10 gap-5">
     <section class="my-auto">
       <PageDetails subheader="I'm Kent Joemar Escoto" header="Front-end Web Developer.">
         With a strong foundation in HTML5, CSS3, and JavaScript, complemented by expertise in UI/UX design. Seeking to
@@ -8,7 +8,7 @@
       </PageDetails>
 
       <span>
-        <div class="flex items-center gap-5 mt-10">
+        <div class="flex items-center lg:gap-5 gap-3 lg:mt-10 mt-7">
           <Button label="My Projects" btype="primary" @click="navigateTo('/#projects')" />
           <Button label="Resume" right-icon="i-mdi-file-document-arrow-right-outline" btype="secondary" @click="link(resume)" />
           <!-- https://drive.google.com/file/d/1UsVAtVGbFRgDPO6cB9Zpi7QHpJV4x_iX/view?usp=sharing -->
@@ -18,7 +18,7 @@
     <section class="w-full flex items-center justify-center">
       <UTooltip text="Let's Work!"
         :ui="{ background: 'bg-white dark:bg-black', ring: 'ring-1 ring-gray-200 dark:ring-gray-500/30' }">
-        <img draggable="false" class="w-auto h-[350px] rounded-3xl hover:scale-110 hover:rotate-3 trans"
+        <img draggable="false" class="w-auto lg:h-[350px] h-[250px] rounded-3xl hover:scale-110 hover:rotate-3 trans"
           src="/MainModel.png">
       </UTooltip>
     </section>

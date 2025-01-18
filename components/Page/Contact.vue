@@ -1,6 +1,6 @@
 <template>
   <section class="w-full h-full flex flex-col gap-10">
-    <div class="rounded-xl p-10 border border-gray-500/30 flex items-center justify-between w-full">
+    <div class="rounded-xl p-10 border border-gray-500/30 flex lg:flex-row flex-col lg:items-center items-start justify-between w-full lg:gap-0 gap-5">
       <PageDetails header="Looking for a Front-end Web Developer?" header-class="text-xl font-semibold">
         <p class="text-sm w-full">
           I’m always open to address all your inquiries. Let’s connect on
@@ -10,7 +10,7 @@
         </p>
       </PageDetails>
 
-      <div class="w-[80%] flex justify-end">
+      <div class="lg:w-[80%] w-fit flex justify-end">
         <Button @click="connect" label="Connect with me" btype="primary" left-icon="i-vaadin-handshake" />
       </div>
     </div>
@@ -32,9 +32,9 @@
         <div class="space-y-3">
           <p>Contact me via Email</p>
           <div
-            class="rounded flex items-center justify-between px-5 py-3 dark:text-gray-500 text-black border border-gray-500/30 text-sm bg-gray-500/10">
+            class="rounded flex items-center justify-between lg:px-5 px-3 lg:py-3 py-2 dark:text-gray-500 text-black border border-gray-500/30 lg:text-sm text-xs bg-gray-500/10">
             <section class="flex items-center gap-2">
-              <UIcon class="h-6 w-6" name="i-ic-round-email" />
+              <UIcon class="lg:text-2xl text-xl" name="i-ic-round-email" />
               <p class="tracking-wider" id="personal_email">kin.webb.1024@gmail.com</p>
             </section>
 
@@ -82,9 +82,11 @@
           </section>
 
           <div class="w-full flex justify-end">
-            <Button v-if="!load.bool" :isDisabled="load.isDisable" type="submit" :label="load.label" btype="primary"
-              :right-icon="load.icon" />
-            <Button v-else :isDisabled="load.isDisable" :label="load.label" btype="primary" :right-icon="load.icon" />
+            <span>
+              <Button v-if="!load.bool" :isDisabled="load.isDisable" type="submit" :label="load.label" btype="primary"
+                :right-icon="load.icon" />
+              <Button v-else :isDisabled="load.isDisable" :label="load.label" btype="primary" :right-icon="load.icon" />
+            </span>
           </div>
         </form>
       </section>
@@ -157,7 +159,7 @@ const copy = () => {
           timeout: timeoutDuration,
           callback: () => (isDisabled.value = false),
           ui: {
-            background: "dark:bg-gray-900 bg-white",
+            background: "dark:bg-gray-900 bg-gray-200",
             progress: {
               background: "dark:bg-gray-500 bg-gray-900 rounded-full",
             },
@@ -248,7 +250,7 @@ const submitForm = async () => {
         load.isDisable = false
       },
       ui: {
-        background: "dark:bg-gray-900 bg-white",
+        background: "dark:bg-gray-900 bg-gray-200",
         progress: {
           background: "dark:bg-red-600 bg-red-500 rounded-full",
         },

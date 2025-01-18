@@ -1,12 +1,8 @@
 <template>
-  <div class="mt-20">
-    <section class="flex items-center justify-between">
-      <span class="text-sm">
-        <Button label="Back to projects" left-icon="i-uil-left" btype="secondary" @click="navigateTo('/#projects')" />
-      </span>
-
-      <ToggleDarkMode />
-    </section>
+  <div class="pt-10">
+    <div class="text-sm w-fit">
+      <Button label="Back" left-icon="i-uil-left" btype="secondary" @click="navigateTo('/#projects')" />
+    </div>
 
     <div v-if="loading">
       <PageStatus status="pending" />
@@ -34,14 +30,14 @@
       <section class="grid md:grid-cols-2 grid-cols-1 gap-7">
         <div class="space-y-2">
           <p class="text-dark-blue text-sm tracking-wide font-medium">Year</p>
-          <h1 class="text-lg">{{ project.year }}</h1>
+          <h1 class="lg:text-lg text-base font-medium">{{ project.year }}</h1>
         </div>
 
         <div class="space-y-2">
           <p class="text-dark-blue text-sm tracking-wide font-medium">Role</p>
           <div>
             <ul v-for="role in project.role">
-              <li class="text-lg list-disc list-inside">{{ role }}</li>
+              <li class="lg:text-lg text-base font-medium list-disc list-inside">{{ role }}</li>
             </ul>
           </div>
         </div>
@@ -96,7 +92,7 @@
       <section>
         <span v-if="project.screenshots.length" class="space-y-3">
           <div class="flex items-center justify-between">
-            <div class="text-lg font-medium flex gap-2 items-center select-none">
+            <div class="lg:text-lg text-base font-medium flex gap-2 items-center select-none">
               <UIcon name="i-mdi-monitor-screenshot" />
               Screenshots
             </div>
@@ -135,7 +131,8 @@
         </span>
 
         <span v-else>
-          <div class="text-gray-500 flex items-center justify-center gap-2 text-lg font-semibold select-none">
+          <div
+            class="text-gray-500 flex items-center justify-center gap-2 lg:text-lg text-base font-semibold select-none">
             <UIcon name="i-mdi-monitor-off" />
             No Screenshots Available
           </div>
@@ -144,7 +141,7 @@
       </section>
 
       <section v-if="project.figmaOverview" class="space-y-3">
-        <div class="text-lg font-medium flex gap-2 items-center select-none">
+        <div class="lg:text-lg text-base font-medium flex gap-2 items-center select-none">
           <UIcon name="i-material-symbols-overview-key-outline" />
           Figma Overview
         </div>
