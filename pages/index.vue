@@ -6,8 +6,8 @@
         <PageFloatingNavbar />
       </span> -->
 
-      <PageHero class="z-10 py-10" id="/" />
-      <img class="w-80 h-auto absolute -right-20 top-20 z-0" src="/glow.png" />
+      <PageHero class="z-10 pb-32" id="/" />
+      <img class="w-80 h-auto absolute -right-32 top-5 z-0" src="/glow.png" />
       <img class="w-60 h-auto absolute -left-32 bottom-10 z-0" src="/glow.png" />
     </section>
 

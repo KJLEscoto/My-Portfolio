@@ -11,7 +11,9 @@
       </PageDetails>
 
       <div class="lg:w-[80%] w-fit flex justify-end">
-        <Button @click="connect" label="Connect with me" btype="primary" left-icon="i-vaadin-handshake" />
+        <span>
+          <Button @click="connect" label="Connect with me" btype="primary" left-icon="i-vaadin-handshake" />
+        </span>
       </div>
     </div>
 
@@ -22,7 +24,7 @@
 
     <Divider />
 
-    <div class="grid md:grid-cols-2 grid-cols-1 gap-20">
+    <div class="grid md:grid-cols-2 grid-cols-1 lg:gap-20 gap-10">
       <section class="w-full space-y-10">
         <PageDetails subheader="Hire Me" header="Let’s work together on your next project.">
           I’m passionate about exploring exciting opportunities, engaging in meaningful discussions, and building strong

@@ -9,9 +9,12 @@
 
       <span>
         <div class="flex items-center lg:gap-5 gap-3 lg:mt-10 mt-7">
-          <Button label="My Projects" btype="primary" @click="navigateTo('/#projects')" />
-          <Button label="Resume" right-icon="i-mdi-file-document-arrow-right-outline" btype="secondary" @click="link(resume)" />
-          <!-- https://drive.google.com/file/d/1UsVAtVGbFRgDPO6cB9Zpi7QHpJV4x_iX/view?usp=sharing -->
+          <span>
+            <Button label="My Projects" btype="primary" @click="navigateTo('/#projects')" />
+          </span>
+          <span>
+            <Button label="Resume" right-icon="i-mdi-file-document-arrow-right-outline" btype="secondary" @click="link(resume)" />
+          </span>
         </div>
       </span>
     </section>

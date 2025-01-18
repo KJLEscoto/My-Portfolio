@@ -40,6 +40,7 @@
             <Card :cards="visibleProjects" />
 
             <span>
+              <Divider class="lg:block hidden mt-7"/>
               <p class="py-4 text-xs text-gray-500 dark:text-gray-500/70 tracking-wider font-medium text-center">Showing
                 {{ visibleProjects.length }} of
                 {{
@@ -48,11 +49,12 @@
             </span>
 
             <span v-if="displayButtons" class="text-center flex justify-center items-center ">
-              <div class="w-fit">
-                <Button v-if="canLoadMore" @click="loadMore" label="See More" btype="secondary"
-                  right-icon="i-pajamas-expand-down" />
-                <Button v-else @click="seeLess" label="See Less" btype="secondary" right-icon="i-pajamas-expand-up" />
-              </div>
+              <span v-if="canLoadMore">
+                <Button @click="loadMore" label="See More" btype="secondary" right-icon="i-pajamas-expand-down" />
+              </span>
+              <span v-else>
+                <Button @click="seeLess" label="See Less" btype="secondary" right-icon="i-pajamas-expand-up" />
+              </span>
             </span>
           </section>
         </div>

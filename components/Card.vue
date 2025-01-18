@@ -15,24 +15,32 @@
       <h3 class="lg:text-2xl text-xl font-semibold">{{ card.name }}</h3>
       <p class="text-gray-500 lg:text-base text-sm">{{ card.description }}</p>
       <span>
-        <div class="flex lg:flex-row flex-col gap-3 mt-7 flex-wrap w-full">
+        <div class="flex lg:flex-row flex-col lg:items-center items-start gap-3 mt-7 flex-wrap w-full">
+          
           <span class="lg:hidden block">
             <Button v-if="card.live" label="Live Demo" left-icon="i-material-symbols-light-circle" btype="tertiary"
               @click="link(getProjectLink(card, 'Live'))" />
           </span>
 
-          <Button v-if="card.category.includes('Design') && card.category.includes('Code')" btype="dual"
-            left-icon="i-logos-figma" right-icon="i-mdi-github" @design="link(getProjectLink(card, 'Figma'))"
-            @code="link(getProjectLink(card, 'Github'))" />
+          <span class="lg:w-fit w-full" v-if="card.category.includes('Design') && card.category.includes('Code')">
+            <Button btype="dual" left-icon="i-logos-figma" right-icon="i-mdi-github"
+              @design="link(getProjectLink(card, 'Figma'))" @code="link(getProjectLink(card, 'Github'))" />
+          </span>
 
-          <Button v-else-if="card.category.includes('Code')" @click="link(getProjectLink(card, 'Github'))"
-            label="Github" left-icon="i-mdi-github" btype="primary" btn-class="dark:hover:text-dark-blue" />
+          <span class="lg:w-fit w-full" v-else-if="card.category.includes('Code')">
+            <Button @click="link(getProjectLink(card, 'Github'))" label="Github" left-icon="i-mdi-github"
+              btype="primary" btn-class="dark:hover:text-dark-blue" />
+          </span>
 
-          <Button v-else-if="card.category.includes('Design')" @click="link(getProjectLink(card, 'Figma'))"
-            label="Figma" left-icon="i-logos-figma" btype="primary" />
+          <span class="lg:w-fit w-full" v-else-if="card.category.includes('Design')">
+            <Button @click="link(getProjectLink(card, 'Figma'))" label="Figma" left-icon="i-logos-figma"
+              btype="primary" />
+          </span>
 
-          <Button label="See Details" btype="secondary" right-icon="i-pajamas-arrow-right"
-            @click="navigateTo(`/project/${formatName(card.name)}`)" />
+          <span class="lg:w-fit w-full">
+            <Button label="See Details" btype="secondary" right-icon="i-pajamas-arrow-right"
+              @click="navigateTo(`/project/${formatName(card.name)}`)" />
+          </span>
 
           <span class="hidden lg:block">
             <Button v-if="card.live" label="Live Demo" left-icon="i-material-symbols-light-circle" btype="tertiary"

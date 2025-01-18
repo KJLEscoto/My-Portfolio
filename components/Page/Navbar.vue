@@ -1,7 +1,8 @@
 <template>
   <div class="py-10 w-full">
     <!-- Desktop Navbar -->
-    <section class="lg:flex hidden items-center justify-between">
+    <section
+      class="lg:flex hidden items-center justify-between w-full fixed top-0 left-0 bg-white/50 dark:bg-black/50 backdrop-blur dark:border-gray-500/20 border-b z-50 py-5 lg:px-60">
       <NuxtLink to="/">
         <Logo logo-type="mainLogo" />
       </NuxtLink>
@@ -16,14 +17,14 @@
 
     <!-- Mobile Navbar -->
     <section
-      class="flex lg:hidden items-center justify-between w-full fixed -top-1 left-0 bg-white/50 dark:bg-black/50 backdrop-blur dark:border-gray-500/20 border z-50 p-5">
+      class="flex lg:hidden items-center justify-between w-full fixed top-0 left-0 bg-white/50 dark:bg-black/50 backdrop-blur dark:border-gray-500/20 border-b z-50 p-5">
       <NuxtLink to="/">
         <Logo logo-type="iconLogo" />
       </NuxtLink>
       <UIcon @click="toggleMenu" class="text-3xl cursor-pointer" name="i-jam-menu" />
       <!-- Mobile Menu -->
       <div
-        class="fixed -top-5 left-0 z-30 py-10 rounded-xl w-full bg-white dark:bg-black shadow-md transition-transform duration-300 overflow-hidden"
+        class="fixed -top-5 left-0 z-30 py-10 w-full bg-white dark:bg-black shadow-md transition-transform duration-300 overflow-hidden border-b dark:border-gray-500/30"
         :class="{ 'translate-y-0': menu, '-translate-y-full': !menu }">
         <div class="px-5 flex flex-col gap-5" @click="closeMenu">
           <div class="flex justify-between items-center">
@@ -32,7 +33,7 @@
             </NuxtLink>
             <section class="flex items-center gap-2">
               <ToggleDarkMode />
-              <UIcon @click="closeMenu" class="text-3xl cursor-pointer" name="i-jam-close" />
+              <UIcon @click="closeMenu" class="text-3xl cursor-pointer hover:text-red-500 trans" name="i-jam-close" />
             </section>
           </div>
           <div>

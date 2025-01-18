@@ -10,7 +10,7 @@
     <section>
       <NuxtMarquee direction="left" speed="30">
         <div v-for="skill in doubledTopSkills" :key="`top-${skill.id}`"
-          class="lg:h-40 h-32 flex items-center">
+          class="lg:h-40 h-36 flex items-center">
           <UTooltip :text="skill.name" :popper="{ placement: 'top', offsetDistance: 16 }"
             :ui="{ background: 'bg-white dark:bg-black', ring: 'ring-1 ring-gray-200 dark:ring-gray-500/30' }">
             <UIcon :name="skill.icon" :class="`${iconClass}`" />
@@ -18,7 +18,7 @@
         </div>
       </NuxtMarquee>
       <NuxtMarquee direction="right" speed="30">
-        <div v-for="skill in doubledBottomSkills" :key="`bottom-${skill.id}`" class="lg:h-40 h-32 flex items-center">
+        <div v-for="skill in doubledBottomSkills" :key="`bottom-${skill.id}`" class="lg:h-40 h-36 flex items-center">
           <UTooltip :text="skill.name" :popper="{ placement: 'bottom', offsetDistance: 16 }"
             :ui="{ background: 'bg-white dark:bg-black', ring: 'ring-1 ring-gray-200 dark:ring-gray-500/30' }">
             <UIcon :name="skill.icon" :class="`${iconClass}`" />

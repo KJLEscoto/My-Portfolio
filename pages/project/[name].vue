@@ -73,15 +73,21 @@
         </div>
         <div>
           <span>
-            <div class="flex gap-5 items-center">
-              <Button v-if="project.category.includes('Code')" @click="link(getProjectLink(project, 'Github'))"
-                label="GitHub" left-icon="i-mdi-github" btype="primary" btn-class="dark:hover:text-dark-blue" />
+            <div class="flex lg:gap-5 gap-3 items-center flex-wrap">
+              <span v-if="project.category.includes('Code')">
+                <Button  @click="link(getProjectLink(project, 'Github'))"
+                  label="GitHub" left-icon="i-mdi-github" btype="primary" btn-class="dark:hover:text-dark-blue" />
+              </span>
 
-              <Button v-if="project.category.includes('Design')" @click="link(getProjectLink(project, 'Figma'))"
-                label="Figma" left-icon="i-logos-figma" btype="primary" />
+              <span v-if="project.category.includes('Design')">
+                <Button @click="link(getProjectLink(project, 'Figma'))"
+                  label="Figma" left-icon="i-logos-figma" btype="primary" />
+              </span>
 
-              <Button v-if="project.live" label="Live Demo" left-icon="i-material-symbols-light-circle" btype="tertiary"
-                @click="link(getProjectLink(project, 'Live'))" />
+              <span v-if="project.live">
+                <Button label="Live Demo" left-icon="i-material-symbols-light-circle" btype="tertiary"
+                  @click="link(getProjectLink(project, 'Live'))" />
+              </span>
             </div>
           </span>
         </div>

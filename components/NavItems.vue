@@ -2,9 +2,9 @@
   <ul v-for="item in items" :key="item.name">
     <a :href="item.path" @click.prevent="handleClick(item)">
       <li
-        class="dark:text-gray-500 text-black lg:hover:text-dark-blue lg:dark:hover:text-dark-blue trans select-none w-full hover:bg-darkest-blue hover:dark:text-white hover:text-white px-5 py-2 lg:py-0 lg:px-0 rounded-full"
+        class="dark:text-gray-500 text-black lg:hover:text-dark-blue lg:dark:hover:text-dark-blue trans select-none w-full hover:bg-darkest-blue hover:dark:text-white lg:hover:bg-transparent hover:text-white px-5 py-2 lg:py-0 lg:px-0 rounded-full"
         :class="{
-      'font-bold lg:dark:text-white lg:text-black bg-gray-500/20 dark:text-white': isActive(item)
+      'font-bold lg:dark:text-white lg:text-black lg:bg-transparent bg-gray-500/20 dark:text-white': isActive(item)
     }">
         {{ item.name }}
       </li>
@@ -14,9 +14,9 @@
 
 <script setup>
 const items = [
-  { name: 'Home', path: '/' },
-  { name: 'Skills', path: '/#skills' },
-  { name: 'Projects', path: '/#projects' },
+  { name: 'Home.', path: '/' },
+  { name: 'Skills.', path: '/#skills' },
+  { name: 'Projects.', path: '/#projects' },
 ];
 
 const activeItem = ref(null);
