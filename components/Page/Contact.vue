@@ -1,6 +1,7 @@
 <template>
   <section class="w-full h-full flex flex-col gap-10">
-    <div class="rounded-xl p-10 border border-gray-500/30 flex lg:flex-row flex-col lg:items-center items-start justify-between w-full lg:gap-0 gap-5">
+    <div
+      class="rounded-xl p-10 border border-gray-500/30 flex lg:flex-row flex-col lg:items-center items-start justify-between w-full lg:gap-0 gap-5">
       <PageDetails header="Looking for a Web Developer?" header-class="text-xl font-semibold">
         <p class="text-sm w-full">
           I’m always open to address all your inquiries. Let’s connect on
@@ -34,10 +35,10 @@
         <div class="space-y-3">
           <p>Contact me via Email</p>
           <div
-            class="rounded flex items-center justify-between lg:px-5 px-3 lg:py-3 py-2 dark:text-gray-500 text-black border border-gray-500/30 lg:text-sm text-xs bg-gray-500/10">
-            <section class="flex items-center gap-2">
+            class="rounded flex flex-wrap gap-3 items-center justify-between lg:px-5 px-3 lg:py-3 py-2 dark:text-gray-500 text-black border border-gray-500/30 lg:text-sm text-xs bg-gray-500/10">
+            <section class="flex flex-wrap items-center gap-2">
               <UIcon class="lg:text-2xl text-xl" name="i-ic-round-email" />
-              <p class="tracking-wider" id="personal_email">kin.webb.1024@gmail.com</p>
+              <p class="tracking-wider w-auto" id="personal_email">kin.webb.1024@gmail.com</p>
             </section>
 
             <button :class="{ 'opacity-60 cursor-not-allowed': isDisabled }" @click="copy" :disabled="isDisabled"
@@ -61,7 +62,8 @@
 
       <section class="w-full h-auto">
         <PageDetails header="Leave a message." />
-        <p class="mb-3 text-xs text-red-500/80 font-semibold tracking-wider">Rate? Report a bug?? or Confess to your crush??? GO! Before you go.</p>
+        <p class="mb-3 text-xs text-red-500/80 font-semibold tracking-wider">Rate? Report a bug?? or Confess to your
+          crush??? GO! Before you go.</p>
 
         <form @submit.prevent="submitForm" class="space-y-5">
           <section class="space-y-2">

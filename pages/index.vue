@@ -1,12 +1,12 @@
 <template>
   <div class="h-full w-full relative">
-    <section class="min-h-screen h-full w-full flex flex-col justify-between relative">
+    <section class="xl:min-h-screen h-full w-full flex flex-col justify-between relative">
       <!-- Floating Navbar visibility based on scroll -->
       <!-- <span v-if="!isAtTop" :class="[!isAtTop ? 'flex items-center justify-center trans opacity-100' : 'opacity-0 trans -translate-y-10']">
         <PageFloatingNavbar />
       </span> -->
 
-      <PageHero class="z-10 pb-32" id="/" />
+      <PageHero class="z-10 xl:pt-0 pt-20 xl:pb-28 pb-0" id="/" />
       <img class="w-80 h-auto absolute -right-32 top-5 z-0" src="/glow.png" />
       <img class="w-60 h-auto absolute -left-32 bottom-10 z-0" src="/glow.png" />
     </section>
