@@ -22,7 +22,7 @@
         </ul>
 
         <!-- Tab Description -->
-        <p class="dark:text-white text-black w-full lg:text-base text-sm">
+        <p class="dark:text-white text-black w-full lg:text-base text-sm mb-5">
           {{ currentTabDescription }}
         </p>
 

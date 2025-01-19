@@ -15,7 +15,7 @@
       <h3 class="lg:text-2xl text-xl font-semibold">{{ card.name }}</h3>
       <p class="dark:text-gray-500 text-gray-600 lg:text-base text-sm">{{ card.description }}</p>
       <span>
-        <div class="flex sm:flex-row flex-col sm:items-center items-start gap-3 mt-7 flex-wrap w-full">
+        <div class="flex sm:flex-row flex-col sm:items-center items-start gap-3 lg:mt-7 flex-wrap w-full">
           
           <span class="sm:hidden block">
             <Button v-if="card.live" label="Live Demo" left-icon="i-material-symbols-light-circle" btype="tertiary"
