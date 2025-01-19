@@ -68,7 +68,7 @@ const tabs = [
   },
   {
     title: 'Design',
-    description: 'These are projects where I focused on crafting the user interface and experience through Figma, without the coding aspect involved.',
+    description: 'These are projects where I focused on crafting the user interface and experience through Figma. (Some projects include code)',
   },
   {
     title: 'Code',
