@@ -7,8 +7,9 @@
       </span> -->
 
       <PageHero class="z-10 xl:pt-0 pt-20 xl:pb-28 pb-0" id="/" />
-      <img class="w-80 h-auto absolute -right-32 top-5 z-0" src="/glow.png" />
-      <img class="w-60 h-auto absolute -left-32 bottom-10 z-0" src="/glow.png" />
+      <img draggable="false" class="w-80 h-auto absolute -left-48 lg:-top-10 -top-32 z-0 dark:opacity-100 opacity-60" src="/glow.png" />
+      <img draggable="false" class="w-80 h-auto absolute -right-48 xl:bottom-20 -bottom-52 z-0 dark:opacity-100 opacity-60"
+        src="/glow.png" />
     </section>
 
     <PageSkills id="skills" class="pt-28" />

@@ -21,7 +21,7 @@
       <NuxtLink to="/">
         <Logo logo-type="iconLogo" />
       </NuxtLink>
-      <UIcon @click="toggleMenu" class="text-3xl cursor-pointer" name="i-jam-menu" />
+      <UIcon @click="toggleMenu" class="text-3xl cursor-pointer hover:text-black/60 dark:hover:text-gray-500" name="i-jam-menu" />
       <!-- Mobile Menu -->
       <div
         class="fixed -top-5 left-0 z-30 py-10 w-full bg-white dark:bg-black shadow-md transition-transform duration-300 overflow-hidden border-b dark:border-gray-500/30"

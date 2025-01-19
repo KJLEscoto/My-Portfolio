@@ -63,7 +63,7 @@
       <section class="w-full h-auto">
         <PageDetails header="Leave a message." />
         <p class="mb-3 text-xs text-red-500/80 font-semibold tracking-wider">Rate? Report a bug?? or Confess to your
-          crush??? GO! Before you go.</p>
+          crush??? GO! 🫡</p>
 
         <form @submit.prevent="submitForm" class="space-y-5">
           <section class="space-y-2">
