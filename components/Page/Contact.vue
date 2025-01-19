@@ -1,7 +1,7 @@
 <template>
   <section class="w-full h-full flex flex-col gap-10">
     <div class="rounded-xl p-10 border border-gray-500/30 flex lg:flex-row flex-col lg:items-center items-start justify-between w-full lg:gap-0 gap-5">
-      <PageDetails header="Looking for a Front-end Web Developer?" header-class="text-xl font-semibold">
+      <PageDetails header="Looking for a Web Developer?" header-class="text-xl font-semibold">
         <p class="text-sm w-full">
           I’m always open to address all your inquiries. Let’s connect on
           <span class="text-dark-blue font-semibold">LinkedIn</span>
@@ -60,12 +60,10 @@
       </section>
 
       <section class="w-full h-auto">
-        <form @submit.prevent="submitForm" class="space-y-5">
-          <!-- <FormGroup group="normal" label="email address" attribute="email_address" type="email"
-            v-model="formData.email_address" />
-          <FormGroup group="textarea" label="message" attribute="message" v-model="formData.message" /> -->
+        <PageDetails header="Leave a message." />
+        <p class="mb-3 text-xs text-red-500/80 font-semibold tracking-wider">Rate? Report a bug?? or Confess to your crush??? GO! Before you go.</p>
 
-          <!-- Name -->
+        <form @submit.prevent="submitForm" class="space-y-5">
           <section class="space-y-2">
             <FormLabel inputAttributes="name" inputLabel="Name" />
             <FormInput inputAttributes="name" inputType="text" v-model="formData.name" />

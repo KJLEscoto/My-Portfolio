@@ -40,11 +40,8 @@
             <Card :cards="visibleProjects" />
 
             <span>
-              <Divider class="lg:block hidden mt-7"/>
-              <p class="py-4 text-xs text-gray-500 dark:text-gray-500/70 tracking-wider font-medium text-center">Showing
-                {{ visibleProjects.length }} of
-                {{
-                filteredProjects.length }} Projects</p>
+              <Divider class="lg:block hidden mt-7" />
+              <FooterDetails class="my-2"> Showing {{ visibleProjects.length }} of {{ filteredProjects.length }} Projects </FooterDetails>
               <Divider />
             </span>
 

@@ -45,7 +45,7 @@ defineProps({
   isDisabled: Boolean
 })
 
-const dualClass = 'dark:bg-white dark:text-black text-white bg-black w-full hover:bg-darkest-blue lg:px-7 py-2 font-semibold cursor-pointer trans justify-center dark:hover:bg-darkest-blue dark:hover:text-white flex items-center select-none'
+const dualClass = 'dark:bg-white dark:text-black text-white bg-black w-full hover:bg-darkest-blue sm:px-7 py-2 font-semibold cursor-pointer trans justify-center dark:hover:bg-darkest-blue dark:hover:text-white flex items-center select-none'
 
 defineEmits([ 'click', 'design', 'code' ]);
 </script>

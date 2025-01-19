@@ -6,7 +6,7 @@
         :class="{
       'font-bold lg:dark:text-white lg:text-black lg:bg-transparent bg-gray-500/20 dark:text-white': isActive(item)
     }">
-        {{ item.name }}
+        {{ item.name }}.
       </li>
     </a>
   </ul>
@@ -14,9 +14,9 @@
 
 <script setup>
 const items = [
-  { name: 'Home.', path: '/' },
-  { name: 'Skills.', path: '/#skills' },
-  { name: 'Projects.', path: '/#projects' },
+  { name: 'Home', path: '/' },
+  { name: 'Skills', path: '/#skills' },
+  { name: 'Projects', path: '/#projects' }, 
 ];
 
 const activeItem = ref(null);

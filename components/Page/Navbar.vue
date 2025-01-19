@@ -2,7 +2,7 @@
   <div class="py-10 w-full">
     <!-- Desktop Navbar -->
     <section
-      class="lg:flex hidden items-center justify-between w-full fixed top-0 left-0 bg-white/50 dark:bg-black/50 backdrop-blur dark:border-gray-500/20 border-b z-50 py-5 lg:px-60">
+      class="lg:flex hidden items-center justify-between w-full fixed top-0 left-0 bg-white/50 dark:bg-black/50 backdrop-blur dark:border-gray-500/20 border-b z-50 p-5 xl:px-60 gap-5">
       <NuxtLink to="/">
         <Logo logo-type="mainLogo" />
       </NuxtLink>

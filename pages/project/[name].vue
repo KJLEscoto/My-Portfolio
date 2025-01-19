@@ -29,12 +29,12 @@
 
       <section class="grid md:grid-cols-2 grid-cols-1 gap-7">
         <div class="space-y-2">
-          <p class="text-dark-blue text-sm tracking-wide font-medium">Year</p>
+          <HeadDetails title="Year" />
           <h1 class="lg:text-lg text-base font-medium">{{ project.year }}</h1>
         </div>
 
         <div class="space-y-2">
-          <p class="text-dark-blue text-sm tracking-wide font-medium">Role</p>
+          <HeadDetails title="Role" />
           <div>
             <ul v-for="role in project.role">
               <li class="lg:text-lg text-base font-medium list-disc list-inside">{{ role }}</li>
@@ -43,25 +43,13 @@
         </div>
 
         <div class="space-y-2" v-if="project.frameworks.length">
-          <p class="text-dark-blue text-sm tracking-wide font-medium">Language / Frameworks</p>
-          <div class="flex items-center gap-2 flex-wrap">
-            <span class="flex gap-2 items-center px-4 py-2 bg-gray-500/10 rounded select-none"
-              v-for="framework in project.frameworks">
-              <UIcon :name="framework.icon" />
-              <p class="text-sm text-black/80 dark:text-white/80 font-semibold">{{ framework.name }}</p>
-            </span>
-          </div>
+          <HeadDetails title="Language / Frameworks" />
+          <SkillsTag :skills="project.frameworks" />
         </div>
 
         <div class="space-y-2" v-if="project.tools.length">
-          <p class="text-dark-blue text-sm tracking-wide font-medium">Tools</p>
-          <div class="flex items-center gap-2 flex-wrap">
-            <span class="flex gap-2 items-center px-4 py-2 bg-gray-500/10 rounded select-none"
-              v-for="tool in project.tools">
-              <UIcon :name="tool.icon" />
-              <p class="text-sm text-black/80 dark:text-white/80 font-semibold">{{ tool.name }}</p>
-            </span>
-          </div>
+          <HeadDetails title="Tools" />
+          <SkillsTag :skills="project.tools" />
         </div>
       </section>
 
@@ -75,13 +63,13 @@
           <span>
             <div class="flex lg:gap-5 gap-3 items-center flex-wrap">
               <span v-if="project.category.includes('Code')">
-                <Button  @click="link(getProjectLink(project, 'Github'))"
-                  label="GitHub" left-icon="i-mdi-github" btype="primary" btn-class="dark:hover:text-dark-blue" />
+                <Button @click="link(getProjectLink(project, 'Github'))" label="GitHub" left-icon="i-mdi-github"
+                  btype="primary" btn-class="dark:hover:text-dark-blue" />
               </span>
 
               <span v-if="project.category.includes('Design')">
-                <Button @click="link(getProjectLink(project, 'Figma'))"
-                  label="Figma" left-icon="i-logos-figma" btype="primary" />
+                <Button @click="link(getProjectLink(project, 'Figma'))" label="Figma" left-icon="i-logos-figma"
+                  btype="primary" />
               </span>
 
               <span v-if="project.live">
@@ -128,8 +116,7 @@
             <span>
               <div class="space-y-2 mt-5">
                 <Divider />
-                <p class="text-xs dark:text-gray-500/70 text-gray-500 tracking-wider font-medium text-center">{{
-                  getFileName(currentScreenshot.path) }}</p>
+                <FooterDetails> {{ getFileName(currentScreenshot.path) }} </FooterDetails>
                 <Divider />
               </div>
             </span>
