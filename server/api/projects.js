@@ -174,7 +174,7 @@ export default defineEventHandler(async (event) => {
       ],
       role: ['Front-end Developer', 'Web Designer'],
       frameworks: ['Nuxt JS', 'Tailwind'], 
-      tools: ['Visual Studio Code', 'Git', 'Github', 'Figma'],
+      tools: ['Visual Studio Code', 'Git', 'Github', 'Figma', 'Netlify'],
       figmaOverview: 'https://embed.figma.com/design/2cqs6Qy37adrUSlLAsMBQd/MASSMS?node-id=0-1&embed-host=share',
       screenshots: [
         { id: 1, path: "/screenshots/massms/Landing Page 1.png" },

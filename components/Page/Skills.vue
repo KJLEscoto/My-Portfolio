@@ -2,7 +2,7 @@
   <div class="w-full h-auto space-y-10">
     <section class="lg:w-[75%]">
       <PageDetails subheader="Skills" header="What I Bring to the Table.">
-        Over the past few years, I have honed my expertise in front-end development, specializing in frameworks and
+        Over the past few years, I have honed my expertise in web development, specializing in frameworks and
         libraries. Below are the tools and technologies I frequently work with:
       </PageDetails>
     </section>
