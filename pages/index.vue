@@ -7,8 +7,10 @@
       </span> -->
 
       <PageHero class="z-10 xl:pt-0 pt-20 xl:pb-28 pb-0" id="/" />
-      <img draggable="false" class="w-80 h-auto absolute -left-48 lg:-top-10 -top-32 z-0 dark:opacity-100 opacity-60" src="/glow.png" />
-      <img draggable="false" class="w-80 h-auto absolute -right-48 xl:bottom-20 -bottom-52 z-0 dark:opacity-100 opacity-60"
+      <img draggable="false" class="w-80 h-auto absolute -left-48 lg:-top-10 -top-32 z-0 dark:opacity-100 opacity-60"
+        src="/glow.png" />
+      <img draggable="false"
+        class="w-80 h-auto absolute -right-48 xl:bottom-20 -bottom-52 z-0 dark:opacity-100 opacity-60"
         src="/glow.png" />
     </section>
 
@@ -18,18 +20,13 @@
 </template>
 
 <script setup>
-
-// const isAtTop = ref(true);
-
-// const checkScrollPosition = () => {
-//   isAtTop.value = window.scrollY === 0;
-// };
-
-// onMounted(() => {
-//   window.addEventListener('scroll', checkScrollPosition);
-// });
-
-// onBeforeUnmount(() => {
-//   window.removeEventListener('scroll', checkScrollPosition);
-// });
+useHead({
+  title: 'KinWebb | Personal Portfolio',
+  meta: [
+    {
+      name: 'description',
+      content: 'This is KinWebb\'s first official portfolio. A proficient skill in web developer, web designer, ui/ux, seo.'
+    }
+  ]
+})
 </script>
