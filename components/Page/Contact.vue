@@ -62,8 +62,8 @@
 
       <section class="w-full h-auto">
         <PageDetails header="Leave a message." />
-        <p class="mb-3 text-xs text-red-500/80 font-semibold tracking-wider">Rate? Report a bug?? or Confess to your
-          crush??? GO! 🫡</p>
+        <!-- <p class="mb-3 text-xs text-red-500/80 font-semibold tracking-wider">Rate? Report a bug?? or Confess to your
+          crush??? GO! 🫡</p> -->
 
         <form @submit.prevent="submitForm" class="space-y-5">
           <section class="space-y-2">
@@ -124,7 +124,7 @@ const socials = [
 ];
 
 const connect = () => {
-  window.open(socials[ 3 ].link, '_blank');
+  window.open(socials[ 2 ].link, '_blank');
 };
 
 // Reactive form data
@@ -186,7 +186,7 @@ const submitForm = async () => {
     load.label = 'Sending...'
     load.icon = 'i-line-md-loading-loop'
     load.isDisable = true
-    
+
     const params = {
       name: formData.name,
       email_address: formData.email_address,
