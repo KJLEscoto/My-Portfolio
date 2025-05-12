@@ -1,5 +1,5 @@
 <template>
-  <div class="h-full w-full my-auto flex xl:flex-row flex-col-reverse lg:gap-0 gap-5">
+  <div class="min-h-screen h-full flex xl:flex-row flex-col-reverse xl:gap-0 gap-10">
     <section class="my-auto w-full">
       <PageDetails subheader="I'm Kent Joemar Escoto" header="Web Developer.">
         Proficient in modern web development <strong>frameworks</strong>, <strong>web design</strong>, and <strong>UI/UX

@@ -1,19 +1,22 @@
 <template>
   <div class="py-10 w-full">
     <!-- Desktop Navbar -->
-    <section
-      class="lg:flex hidden items-center justify-between w-full fixed top-0 left-0 bg-white/50 dark:bg-black/50 backdrop-blur dark:border-gray-500/20 border-b z-50 p-5 xl:px-60 gap-5">
-      <NuxtLink to="/">
-        <Logo logo-type="mainLogo" />
-      </NuxtLink>
-      <div class="flex gap-10 items-center">
-        <NavItems />
-        <section class="flex gap-5 items-center">
-          <Button @click="navigateTo('/#contact')" label="Hire me" btype="primary" />
-          <ToggleDarkMode />
-        </section>
-      </div>
-    </section>
+    <div
+      class="w-full fixed top-0 left-0 z-50 bg-white/50 dark:bg-black/50 backdrop-blur dark:border-gray-500/20 border-b p-5">
+      <section class="lg:flex hidden items-center justify-between w-full gap-5 max-w-6xl mx-auto">
+        <NuxtLink to="/">
+          <Logo logo-type="mainLogo" />
+        </NuxtLink>
+        <div class="flex gap-10 items-center">
+          <NavItems />
+          <section class="flex gap-5 items-center">
+            <Button @click="navigateTo('/#contact')" label="Hire me" btype="primary" />
+            <ToggleDarkMode />
+          </section>
+        </div>
+      </section>
+    </div>
+
 
     <!-- Mobile Navbar -->
     <section
@@ -21,7 +24,8 @@
       <NuxtLink to="/">
         <Logo logo-type="iconLogo" />
       </NuxtLink>
-      <UIcon @click="toggleMenu" class="text-3xl cursor-pointer hover:text-black/60 dark:hover:text-gray-500" name="i-jam-menu" />
+      <UIcon @click="toggleMenu" class="text-3xl cursor-pointer hover:text-black/60 dark:hover:text-gray-500"
+        name="i-jam-menu" />
       <!-- Mobile Menu -->
       <div
         class="fixed -top-5 left-0 z-30 py-10 w-full bg-white dark:bg-black shadow-md transition-transform duration-300 overflow-hidden border-b dark:border-gray-500/30"

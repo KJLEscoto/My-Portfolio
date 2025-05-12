@@ -3,16 +3,16 @@
 @tailwind utilities;
 
 @layer base {
-  html, 
-  body { 
-    @apply h-auto w-auto dark:bg-black bg-white dark:text-white text-black scroll-smooth overflow-x-hidden dark:selection:bg-white dark:selection:text-black selection:bg-black/70 selection:text-white trans
+  html,
+  body {
+    @apply h-auto w-auto bg-transparent dark:text-white text-black scroll-smooth overflow-x-hidden dark:selection:bg-white dark:selection:text-black selection:bg-black/70 selection:text-white trans;
   }
 
   ::-webkit-scrollbar {
-    @apply w-0 bg-none
+    @apply w-0 bg-none;
   }
 
   .trans {
-    @apply transition-all ease-in duration-150
+    @apply transition-all ease-in duration-150;
   }
 }

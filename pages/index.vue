@@ -1,6 +1,6 @@
 <template>
   <div class="h-full w-full relative">
-    <section class="xl:min-h-screen h-full w-full flex flex-col justify-between relative">
+    <section class="h-auto w-full flex flex-col justify-between relative">
       <!-- Floating Navbar visibility based on scroll -->
       <!-- <span v-if="!isAtTop" :class="[!isAtTop ? 'flex items-center justify-center trans opacity-100' : 'opacity-0 trans -translate-y-10']">
         <PageFloatingNavbar />
