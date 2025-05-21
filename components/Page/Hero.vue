@@ -31,7 +31,7 @@
 
 <script setup>
 
-const resume = 'https://drive.google.com/file/d/1UsVAtVGbFRgDPO6cB9Zpi7QHpJV4x_iX/view?usp=sharing'
+const resume = 'https://drive.google.com/file/d/1Kxu04RPwJtZs4KQujC2Y_36wKl5eaR6E/view'
 
 const link = (url) => {
   window.open(url, '_blank');
