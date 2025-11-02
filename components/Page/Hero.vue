@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-screen h-full flex xl:flex-row flex-col-reverse xl:gap-0 gap-10">
     <section class="my-auto w-full">
-      <PageDetails subheader="I'm Kent Joemar Escoto" header="Web Developer.">
+      <PageDetails subheader="I'm Kent Joemar Escoto" header="Web Developer. UI/UX Designer.">
         Proficient in modern web development <strong>frameworks</strong>, <strong>web design</strong>, and <strong>UI/UX
           design</strong>. From designing user-friendly interfaces to implementing advanced functionality, I provide
         innovative solutions that will help you connect with your audience.

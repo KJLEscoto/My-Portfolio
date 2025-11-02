@@ -68,22 +68,23 @@
         <form @submit.prevent="submitForm" class="space-y-5">
           <section class="space-y-2">
             <FormLabel inputAttributes="name" inputLabel="Name" />
-            <FormInput inputAttributes="name" inputType="text" v-model="formData.name" />
+            <FormInput inputAttributes="name" inputType="text" v-model="formData.name" placeholder="Enter your name" />
           </section>
 
           <!-- Email -->
           <section class="space-y-2">
             <FormLabel inputAttributes="email_address" inputLabel="Email Address" />
-            <FormInput inputAttributes="email_address" inputType="email" v-model="formData.email_address" />
+            <FormInput inputAttributes="email_address" inputType="email" v-model="formData.email_address"
+              placeholder="Enter your email address" />
           </section>
 
           <!-- Message -->
           <section class="space-y-2">
             <FormLabel inputAttributes="message" inputLabel="Message" />
-            <FormTextArea inputAttributes="message" v-model="formData.message" />
+            <FormTextArea inputAttributes="message" v-model="formData.message" placeholder="Enter your message" />
           </section>
 
-          <div class="w-full flex justify-end">
+          <div class="w-full flex justify-start">
             <span>
               <Button v-if="!load.bool" :isDisabled="load.isDisable" type="submit" :label="load.label" btype="primary"
                 :right-icon="load.icon" />
@@ -234,13 +235,14 @@ const submitForm = async () => {
           },
         },
       });
+    } else {
+      throw new Error(response.message || "Failed to send message.");
     }
   } catch (error) {
     load.bool = true
     load.label = ''
     load.icon = 'i-line-md-loading-loop'
     load.isDisable = true
-
     toast.add({
       title: "Please complete the form before submitting.",
       icon: "i-mdi-alert-circle",
@@ -264,6 +266,7 @@ const submitForm = async () => {
         },
       },
     });
+
   }
 };
 

@@ -11,6 +11,13 @@ export default defineNuxtConfig({
     },
   },
 
+  runtimeConfig: {
+    smtpHost: process.env.SMTP_HOST,
+    smtpPort: process.env.SMTP_PORT,
+    smtpUser: process.env.SMTP_USER,
+    smtpPass: process.env.SMTP_PASS,
+  },
+
   app: {
     head: {
       title: 'KinWebb | Personal Portfolio',
@@ -21,7 +28,7 @@ export default defineNuxtConfig({
       ],
       link: [
         {
-          rel: 'shortcut icon', type: 'image/png', href: '/IconLogo.png'
+          rel: 'shortcut icon', type: 'image/png', href: '/IconLogo_updated.png'
         }
       ]
     }
