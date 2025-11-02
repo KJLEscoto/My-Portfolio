@@ -2,6 +2,10 @@ import nodemailer from "nodemailer";
 
 export default defineEventHandler(async (event) => {
   const config = useRuntimeConfig();
+  const smtphost = config.smtpHost;
+  const smtpport = config.smtpPort;
+  const smtpuser = config.smtpUser;
+  const smtppass = config.smtpPass;
 
   try {
     const body = await readBody(event); // Parse the incoming request body
@@ -15,28 +19,28 @@ export default defineEventHandler(async (event) => {
 
     // Configure the transporter
     const transporter = nodemailer.createTransport({
-      host: config.smtpHost,
-      port: Number(config.smtpPort),
+      host: smtphost,
+      port: Number(smtpport),
       secure: false,
       auth: {
-        user: config.smtpUser,
-        pass: config.smtpPass,
+        user: smtpuser,
+        pass: smtppass,
       },
     });
 
     // Email options
     const mailOptions = {
       from: `"${name}" <${email_address}>`,
-      to: config.smtpUser, // Replace with the recipient email
+      to: smtpuser, // Replace with the recipient email
       replyTo: `${email_address}`,
       subject: `New Message from ${name} <${email_address}>`,
       text: message,
     };
 
     const myReply = {
-      from: `"KinWebb" <${config.smtpUser}>`,
+      from: `"KinWebb" <${smtpuser}>`,
       to: `${email_address}`,
-      replyTo: config.smtpUser,
+      replyTo: smtpuser,
       subject: "Greetings from KinWebb!",
       html: `
             <div style="font-family: Arial, sans-serif; background: #f7f7f7; padding: 20px;">
