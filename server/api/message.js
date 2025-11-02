@@ -34,7 +34,7 @@ export default defineEventHandler(async (event) => {
     };
 
     const myReply = {
-      from: `"KinWebb" <${email_address}>`,
+      from: `"KinWebb" <${config.smtpUser}>`,
       to: `${email_address}`,
       replyTo: config.smtpUser,
       subject: "Greetings from KinWebb!",
