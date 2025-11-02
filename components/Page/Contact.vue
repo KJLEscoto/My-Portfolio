@@ -65,7 +65,7 @@
         <!-- <p class="mb-3 text-xs text-red-500/80 font-semibold tracking-wider">Rate? Report a bug?? or Confess to your
           crush??? GO! 🫡</p> -->
 
-        <form @submit.prevent="submitForm" class="space-y-5">
+        <form @submit.prevent="submitForm" class="space-y-5" netlify>
           <section class="space-y-2">
             <FormLabel inputAttributes="name" inputLabel="Name" />
             <FormInput inputAttributes="name" inputType="text" v-model="formData.name" placeholder="Enter your name" />
@@ -194,7 +194,7 @@ const submitForm = async () => {
       message: formData.message,
     };
 
-    console.log('data:', params);
+    // console.log('data:', params);
 
     // Sending the form data to the Nuxt 3 API endpoint
     const response = await $fetch('/api/message', {
@@ -244,7 +244,8 @@ const submitForm = async () => {
     load.icon = 'i-line-md-loading-loop'
     load.isDisable = true
     toast.add({
-      title: "Please complete the form before submitting.",
+      title: "Failed to send message.",
+      description: error?.data?.message || error?.message || "Something went wrong.",
       icon: "i-mdi-alert-circle",
       timeout: timeoutDuration,
       callback: () => {
