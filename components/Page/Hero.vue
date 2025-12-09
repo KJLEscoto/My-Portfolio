@@ -33,7 +33,14 @@
 
 <script setup>
 
-const resume = 'https://drive.google.com/file/d/1Kxu04RPwJtZs4KQujC2Y_36wKl5eaR6E/view'
+const resume = 'https://drive.google.com/file/d/1pKgEFmshypiEpUGPCA7d9FqSiOhs2y7n/view'
+
+
+// OLD RESUME
+// https://drive.google.com/file/d/1Kxu04RPwJtZs4KQujC2Y_36wKl5eaR6E/view
+
+// NEW RESUME
+// https://drive.google.com/file/d/1pKgEFmshypiEpUGPCA7d9FqSiOhs2y7n/view?usp=sharing
 
 const link = (url) => {
   window.open(url, '_blank');
