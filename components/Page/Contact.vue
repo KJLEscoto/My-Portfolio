@@ -1,7 +1,7 @@
 <template>
   <section class="w-full h-full flex flex-col gap-10">
     <div
-      class="rounded-xl p-10 border border-gray-500/30 flex lg:flex-row flex-col lg:items-center items-start justify-between w-full lg:gap-0 gap-5">
+      class="rounded-xl md:p-10 p-6 border border-gray-500/30 flex lg:flex-row flex-col lg:items-center items-start justify-between w-full lg:gap-0 gap-5">
       <PageDetails header="Looking for a Web Developer?" header-class="text-xl font-semibold">
         <p class="text-sm w-full">
           I’m always open to address all your inquiries. Let’s connect on
@@ -41,11 +41,19 @@
               <p class="tracking-wider w-auto" id="personal_email">kin.webb.1024@gmail.com</p>
             </section>
 
-            <button :class="{ 'opacity-60 cursor-not-allowed': isDisabled }" @click="copy" :disabled="isDisabled"
-              class="flex items-center gap-1 text-xs py-2 px-3 dark:bg-gray-500/10 bg-gray-500/30 rounded hover:opacity-60 select-none">
-              <p>Copy</p>
-              <UIcon name="i-lucide-copy" />
-            </button>
+            <section class="flex gap-2 items-center">
+              <button @click="mailto"
+                class="flex items-center gap-1 text-xs py-2 px-3 dark:bg-gray-500/10 bg-gray-500/30 rounded hover:opacity-60 select-none">
+                <p>DM</p>
+                <UIcon name="i-ic-sharp-send" />
+              </button>
+
+              <button :class="{ 'opacity-60 cursor-not-allowed': isDisabled }" @click="copy" :disabled="isDisabled"
+                class="flex items-center gap-1 text-xs py-2.5 px-3 dark:bg-gray-500/10 bg-gray-500/30 rounded hover:opacity-60 select-none">
+                <!-- <p>Copy</p> -->
+                <UIcon name="i-lucide-copy" />
+              </button>
+            </section>
           </div>
         </div>
 
@@ -107,7 +115,7 @@ const socials = [
     link: 'https://www.facebook.com/kentoy.newt',
   },
   {
-    icon: 'i-hugeicons-instagram',
+    icon: 'i-basil-instagram-solid',
     link: 'https://www.instagram.com/_itskjle/',
   },
   // {
@@ -121,6 +129,10 @@ const socials = [
   {
     icon: 'i-mdi-github',
     link: 'https://github.com/KJLEscoto',
+  },
+  {
+    icon: 'i-mingcute-dribbble-fill',
+    link: 'https://dribbble.com/kinwebb',
   },
 ];
 
@@ -144,6 +156,17 @@ const load = reactive({
 
 const isDisabled = ref(false); // Disable button during API request
 const timeoutDuration = 2500;
+
+const mailto = () => {
+  const email = document.getElementById("personal_email")?.textContent.trim();
+
+  if (!email) {
+    console.error("No email found in #personal_email");
+    return;
+  }
+
+  window.location.href = `mailto:${email}`;
+};
 
 const copy = () => {
   if (isDisabled.value) return;

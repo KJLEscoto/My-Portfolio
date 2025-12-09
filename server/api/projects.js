@@ -381,49 +381,49 @@ export default defineEventHandler(async (event) => {
         { id: 3, path: "/screenshots/finalgradecalculator/Grade Output.png" },
       ],
     },
-    {
-      id: 10,
-      name: "Personal Portfolio",
-      year: "2025",
-      description:
-        "A modern and responsive personal portfolio website showcasing projects and skills.",
-      category: ["Design", "Code"],
-      image: "/screenshots/portfolio/Landing Page.png",
-      live: true,
-      projectUrl: [
-        {
-          label: "Figma",
-          link: "https://www.figma.com/design/JXaPNyF8eqgIptKlyGv4io/My-Portfolio?node-id=0-1&t=WyAqHGrS7Hw5mECM-1",
-        },
-        { label: "Github", link: "https://github.com/KJLEscoto/My-Portfolio" },
-        { label: "Live", link: "https://kinwebb.netlify.app/" },
-      ],
-      role: ["Full-Stack Lite Developer", "UI/UX Designer"],
-      frameworks: ["Nuxt JS", "Tailwind"],
-      tools: ["Git", "Github", "Netlify", "Figma", "Iconify"],
-      figmaOverview:
-        "https://embed.figma.com/design/JXaPNyF8eqgIptKlyGv4io/My-Portfolio?node-id=0-1&embed-host=share",
-      screenshots: [
-        { id: 1, path: "/screenshots/portfolio/Landing Page.png" },
-        { id: 2, path: "/screenshots/portfolio/Skills.png" },
-        { id: 3, path: "/screenshots/portfolio/Projects.png" },
-        { id: 4, path: "/screenshots/portfolio/Project Details.png" },
-        {
-          id: 5,
-          path: "/screenshots/portfolio/Screenshots - Project Details.png",
-        },
-        {
-          id: 6,
-          path: "/screenshots/portfolio/Figma Overview - Project Details.png",
-        },
-        { id: 7, path: "/screenshots/portfolio/Linkedin and Location.png" },
-        { id: 8, path: "/screenshots/portfolio/Hire Me - Message Form.png" },
-        { id: 9, path: "/screenshots/portfolio/Email Copied.png" },
-        { id: 10, path: "/screenshots/portfolio/Form - Error.png" },
-        { id: 11, path: "/screenshots/portfolio/Form - Sending.png" },
-        { id: 12, path: "/screenshots/portfolio/Form - Sent.png" },
-      ],
-    },
+    // {
+    //   id: 10,
+    //   name: "Personal Portfolio",
+    //   year: "2025",
+    //   description:
+    //     "A modern and responsive personal portfolio website showcasing projects and skills.",
+    //   category: ["Design", "Code"],
+    //   image: "/screenshots/portfolio/Landing Page.png",
+    //   live: true,
+    //   projectUrl: [
+    //     {
+    //       label: "Figma",
+    //       link: "https://www.figma.com/design/JXaPNyF8eqgIptKlyGv4io/My-Portfolio?node-id=0-1&t=WyAqHGrS7Hw5mECM-1",
+    //     },
+    //     { label: "Github", link: "https://github.com/KJLEscoto/My-Portfolio" },
+    //     { label: "Live", link: "https://kinwebb.netlify.app/" },
+    //   ],
+    //   role: ["Full-Stack Lite Developer", "UI/UX Designer"],
+    //   frameworks: ["Nuxt JS", "Tailwind"],
+    //   tools: ["Git", "Github", "Netlify", "Figma", "Iconify"],
+    //   figmaOverview:
+    //     "https://embed.figma.com/design/JXaPNyF8eqgIptKlyGv4io/My-Portfolio?node-id=0-1&embed-host=share",
+    //   screenshots: [
+    //     { id: 1, path: "/screenshots/portfolio/Landing Page.png" },
+    //     { id: 2, path: "/screenshots/portfolio/Skills.png" },
+    //     { id: 3, path: "/screenshots/portfolio/Projects.png" },
+    //     { id: 4, path: "/screenshots/portfolio/Project Details.png" },
+    //     {
+    //       id: 5,
+    //       path: "/screenshots/portfolio/Screenshots - Project Details.png",
+    //     },
+    //     {
+    //       id: 6,
+    //       path: "/screenshots/portfolio/Figma Overview - Project Details.png",
+    //     },
+    //     { id: 7, path: "/screenshots/portfolio/Linkedin and Location.png" },
+    //     { id: 8, path: "/screenshots/portfolio/Hire Me - Message Form.png" },
+    //     { id: 9, path: "/screenshots/portfolio/Email Copied.png" },
+    //     { id: 10, path: "/screenshots/portfolio/Form - Error.png" },
+    //     { id: 11, path: "/screenshots/portfolio/Form - Sending.png" },
+    //     { id: 12, path: "/screenshots/portfolio/Form - Sent.png" },
+    //   ],
+    // },
   ];
 
   // Map frameworks to their details (name and icon) from skills.js

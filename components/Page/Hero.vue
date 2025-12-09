@@ -2,8 +2,10 @@
   <div class="min-h-screen h-full flex xl:flex-row flex-col-reverse xl:gap-0 gap-10">
     <section class="my-auto w-full">
       <PageDetails subheader="I'm Kent Joemar Escoto" header="Web Developer. UI/UX Designer.">
-        Proficient in modern web development <strong>frameworks</strong>, <strong>web design</strong>, and <strong>UI/UX
-          design</strong>. From designing user-friendly interfaces to implementing advanced functionality, I provide
+        Proficient in modern web development <span class="italic font-semibold">frameworks</span>, <span
+          class="italic font-semibold">web
+          design</span>, and <span class="italic font-semibold">UI/UX
+          design</span>. From designing user-friendly interfaces to implementing advanced functionality, I provide
         innovative solutions that will help you connect with your audience.
       </PageDetails>
 
@@ -23,7 +25,7 @@
       <UTooltip text="Let's Work!"
         :ui="{ background: 'bg-white dark:bg-black', ring: 'ring-1 ring-gray-200 dark:ring-gray-500/30' }">
         <img draggable="false" class="w-auto lg:h-[350px] h-[250px] rounded-3xl hover:scale-110 hover:rotate-3 trans"
-          src="/MainModel.png">
+          src="/MainModel3.png">
       </UTooltip>
     </section>
   </div>

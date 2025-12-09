@@ -1,8 +1,6 @@
 <template>
   <div class="pt-10">
-    <div class="text-sm w-fit">
-      <Button label="Back" left-icon="i-uil-left" btype="secondary" @click="navigateTo('/#projects')" />
-    </div>
+
 
     <div v-if="loading">
       <PageStatus status="pending" />
@@ -12,19 +10,51 @@
       <PageStatus status="error" :message="error" />
     </div>
 
-    <div v-else class="mt-10 flex flex-col gap-10">
-      <section class="flex flex-col gap-2">
-        <span class="flex gap-2 items-center">
-          <div v-for="tag in project.category" :key="tag">
-            <Tag :name="tag" />
+    <div v-else class="flex flex-col gap-10">
+      <div class="md:grid md:grid-cols-2 flex flex-col-reverse gap-7 items-end">
+        <section class="space-y-6">
+          <div class="text-sm w-fit">
+            <Button label="Back" left-icon="i-uil-left" btype="secondary" @click="navigateTo('/#projects')" />
           </div>
-        </span>
 
-        <PageDetails :header="project.name">
-          {{ project.description }}
-        </PageDetails>
-      </section>
+          <section class="flex flex-col gap-2">
+            <span class="flex gap-2 items-center">
+              <div v-for="tag in project.category" :key="tag">
+                <Tag :name="tag" />
+              </div>
+            </span>
 
+            <PageDetails :header="project.name">
+              {{ project.description }}
+            </PageDetails>
+          </section>
+
+          <div>
+            <span>
+              <div class="flex lg:gap-5 gap-3 items-center flex-wrap">
+                <span v-if="project.category.includes('Code')">
+                  <Button @click="link(getProjectLink(project, 'Github'))" label="GitHub" left-icon="i-mdi-github"
+                    btype="primary" btn-class="dark:hover:text-dark-blue" />
+                </span>
+
+                <span v-if="project.category.includes('Design')">
+                  <Button @click="link(getProjectLink(project, 'Figma'))" label="Figma" left-icon="i-logos-figma"
+                    btype="primary" />
+                </span>
+
+                <span v-if="project.live">
+                  <Button label="Live Demo" left-icon="i-material-symbols-light-circle" btype="tertiary"
+                    @click="link(getProjectLink(project, 'Live'))" />
+                </span>
+              </div>
+            </span>
+          </div>
+        </section>
+
+        <section>
+          <img draggable="false" class="w-full h-auto rounded-xl border border-gray-500/20" :src="project.image">
+        </section>
+      </div>
       <Divider />
 
       <section class="grid md:grid-cols-2 grid-cols-1 gap-7">
@@ -55,33 +85,14 @@
 
       <Divider />
 
-      <section class="space-y-3">
+      <!-- <section class="space-y-3">
         <div class="text-lg font-medium flex gap-2 items-center select-none">
           Visit
         </div>
-        <div>
-          <span>
-            <div class="flex lg:gap-5 gap-3 items-center flex-wrap">
-              <span v-if="project.category.includes('Code')">
-                <Button @click="link(getProjectLink(project, 'Github'))" label="GitHub" left-icon="i-mdi-github"
-                  btype="primary" btn-class="dark:hover:text-dark-blue" />
-              </span>
+        
+      </section> -->
 
-              <span v-if="project.category.includes('Design')">
-                <Button @click="link(getProjectLink(project, 'Figma'))" label="Figma" left-icon="i-logos-figma"
-                  btype="primary" />
-              </span>
-
-              <span v-if="project.live">
-                <Button label="Live Demo" left-icon="i-material-symbols-light-circle" btype="tertiary"
-                  @click="link(getProjectLink(project, 'Live'))" />
-              </span>
-            </div>
-          </span>
-        </div>
-      </section>
-
-      <Divider />
+      <!-- <Divider /> -->
 
       <section>
         <span v-if="project.screenshots.length" class="space-y-3">

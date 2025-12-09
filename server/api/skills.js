@@ -26,12 +26,12 @@ export default function skills() {
       icon: "i-devicon-nuxtjs",
       category: "Frameworks",
     },
-    {
-      id: 7,
-      name: "React JS",
-      icon: "i-devicon-react",
-      category: "Frameworks",
-    },
+    // {
+    //   id: 7,
+    //   name: "React JS",
+    //   icon: "i-devicon-react",
+    //   category: "Frameworks",
+    // },
     {
       id: 8,
       name: "Tailwind",
