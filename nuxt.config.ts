@@ -24,7 +24,11 @@ export default defineNuxtConfig({
       meta: [
         {
           name: 'description', content: 'This is the official personal portfolio of Kent Joemar Escoto.'
-        }
+        },
+        { property: 'og:image', content: '/portfolio_thumbnail.png' },
+        { property: 'og:image:width', content: '1200' }, // Optional, the width of the image
+        { property: 'og:image:height', content: '630' }, // Optional, the height of the image
+        { property: 'og:image:type', content: 'image/png' },
       ],
       link: [
         {
