@@ -22,9 +22,10 @@ export default defineNuxtConfig({
     head: {
       title: 'KinWebb | Personal Portfolio',
       meta: [
-        {
-          name: 'description', content: 'This is the official personal portfolio of Kent Joemar Escoto.'
-        },
+        { name: 'description', content: 'This is the official personal portfolio of Kent Joemar Escoto.'},
+
+        // google search console verification
+        { name: 'google-site-verification', content: 'eMMfU0WDt9Hz-TWRGBTQY-mgFsF66m9octorJRumMzQ'},
         { property: 'og:image', content: '/portfolio_thumbnail.png' },
         { property: 'og:image:width', content: '1200' }, // Optional, the width of the image
         { property: 'og:image:height', content: '630' }, // Optional, the height of the image
